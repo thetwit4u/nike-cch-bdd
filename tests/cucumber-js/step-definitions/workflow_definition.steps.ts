@@ -67,7 +67,7 @@ Given('I upload consignment {string} to s3 dest {string} and set its URI in cont
   const effectiveKey = interpolate(s3Key, this.ctx, this.env) as unknown as string;
   await uploadJson(this.s3, bucket, effectiveKey, consignment);
   (this.ctx as any).ctx = (this.ctx as any).ctx || {};
-  (this.ctx as any).ctx.consignmentUri = `s3://${bucket}/${effectiveKey}`;
+  (this.ctx as any).ctx.consignmentURI = `s3://${bucket}/${effectiveKey}`;
 });
 
 

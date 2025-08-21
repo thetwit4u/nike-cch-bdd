@@ -61,7 +61,7 @@
         "workflowDefinitionURI": { "type": "string", "format": "uri" },
         "consignmentId": { "type": "string" }
       },
-      "required": ["workflowInstanceId", "workflowName", "workflowDefinitionURI"]
+      "required": ["workflowInstanceId", "workflowDefinitionURI"]
     },
     "controllerContext": { "$ref": "#/$defs/ControllerContext" },
     "transition": {

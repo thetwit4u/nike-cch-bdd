@@ -45,6 +45,14 @@ When('I start the orchestrator scenario via {string}', async function(this: CchW
   // inject dynamic fields into context for interpolation
   (this.ctx as any).ctx = { correlationId: this.ctx.correlationId, workflowInstanceId: this.ctx.workflowInstanceId, businessKey: this.ctx.businessKey };
   initial = interpolate(initial, this.ctx, this.env);
+  // Ensure consignmentURI is injected if available from context
+  if (this.ctx && (this.ctx as any).ctx && (this.ctx as any).ctx.consignmentURI) {
+    initial.command = initial.command || {};
+    initial.command.payload = initial.command.payload || {};
+    if (!initial.command.payload.consignmentURI) {
+      initial.command.payload.consignmentURI = (this.ctx as any).ctx.consignmentURI;
+    }
+  }
   if (this.ctx.workflowDefinitionUri) initial.workflowDefinitionURI = this.ctx.workflowDefinitionUri;
   const url = await resolveQueueUrl(this, this.env.COMMAND_QUEUE_URL);
   await sendToQueue(this, url, initial);

@@ -10,7 +10,7 @@
     "status": "SUCCESS",
     "payload": {
       "consignmentImportEnrichedId": "enriched-${uuid}",
-      "consignmentImportEnrichedURI": "${ctx:consignmentUri}",
+      "consignmentImportEnrichedURI": "${ctx:consignmentURI}",
       "importFilingPacks": []
     }
   }
