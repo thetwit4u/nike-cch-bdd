@@ -4,7 +4,7 @@ import { QueueManager } from '../support/queue_manager';
 import { MessageBus, SystemEvent } from '../support/message_bus';
 import { uploadJson, ensureBucketExists, emptyAndDeleteBucket } from '../support/s3';
 import { buildAjv } from '../support/validators';
-import schema from '../../../cch-system-event.schema.json' assert { type: 'json' };
+import schema from '../cch-system-event.schema.json';
 import fs from 'fs';
 import path from 'path';
 import { GetQueueAttributesCommand, SendMessageCommand } from '@aws-sdk/client-sqs';
