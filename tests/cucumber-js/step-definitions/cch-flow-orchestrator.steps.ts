@@ -42,8 +42,8 @@ When('I start the orchestrator scenario via {string}', async function(this: CchW
   if (mode !== 'sqs') throw new Error('Orchestrator start only supports "sqs"');
   const scenarioPath = (this.ctx as any).scenarioPath as string;
   let initial = JSON.parse(fs.readFileSync(path.join(scenarioPath, 'initial.json'), 'utf-8'));
-  // inject dynamic fields into context for interpolation
-  (this.ctx as any).ctx = { correlationId: this.ctx.correlationId, workflowInstanceId: this.ctx.workflowInstanceId, businessKey: this.ctx.businessKey };
+  // inject dynamic fields into context for interpolation (merge, do not overwrite)
+  (this.ctx as any).ctx = { ...(this.ctx as any).ctx, correlationId: this.ctx.correlationId, workflowInstanceId: this.ctx.workflowInstanceId, businessKey: this.ctx.businessKey };
   initial = interpolate(initial, this.ctx, this.env);
   // Ensure consignmentURI is injected if available from context
   if (this.ctx && (this.ctx as any).ctx && (this.ctx as any).ctx.consignmentURI) {
