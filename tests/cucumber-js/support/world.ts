@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config({ path: 'tests/cucumber-js/.local.env' });
 
-import { setWorldConstructor, IWorldOptions, World } from '@cucumber/cucumber';
+import { setWorldConstructor, IWorldOptions, World, setDefaultTimeout } from '@cucumber/cucumber';
 import { SQSClient } from '@aws-sdk/client-sqs';
 import { SNSClient } from '@aws-sdk/client-sns';
 import { S3Client } from '@aws-sdk/client-s3';
@@ -50,5 +50,9 @@ export class CchWorld extends World {
 }
 
 setWorldConstructor(CchWorld);
+
+// Increase default step timeout based on env (default 120s)
+const defaultTimeoutSec = Number(process.env.SCENARIO_TIMEOUT_SECONDS || '120');
+setDefaultTimeout(defaultTimeoutSec * 1000);
 
 
