@@ -1,4 +1,4 @@
-import { Given, Then, BeforeAll, AfterAll } from '@cucumber/cucumber';
+import { Given, Then, Before, After } from '@cucumber/cucumber';
 import { CchWorld } from '../support/world';
 import { QueueManager } from '../support/queue_manager';
 import { MessageBus, SystemEvent } from '../support/message_bus';
@@ -17,7 +17,7 @@ const validate = ajv.compile(schema);
 
 let tempBucket = '';
 
-BeforeAll(async function(this: CchWorld) {
+Before(async function(this: CchWorld) {
   // Ensure a definitions/data bucket exists; if none provided, create a temp one
   const region = process.env.AWS_REGION || 'eu-west-1';
   if (!this.env.START_S3_BUCKET) {
@@ -38,12 +38,13 @@ BeforeAll(async function(this: CchWorld) {
   bus = new MessageBus(this.sqs, queueUrl);
 });
 
-AfterAll(async function(this: CchWorld) {
+After(async function(this: CchWorld) {
   if (queueUrl && subArn) await qm.unsubscribeAndDeleteQueue(queueUrl, subArn);
   // Clean up temp bucket if we created one
   if (tempBucket) {
     await emptyAndDeleteBucket(this.s3, tempBucket);
     this.attach(`Deleted temp S3 bucket ${tempBucket}`);
+    tempBucket = '';
   }
 });
 
