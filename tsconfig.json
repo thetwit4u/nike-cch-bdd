@@ -12,18 +12,3 @@
   "include": ["tests/cucumber-js/**/*.ts"]
 }
 
-{
-  "compilerOptions": {
-    "target": "ES2022",
-    "module": "ES2022",
-    "moduleResolution": "Node",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "outDir": "dist",
-    "rootDir": "."
-  },
-  "include": ["tests/cucumber-js/**/*.ts"]
-}
-
