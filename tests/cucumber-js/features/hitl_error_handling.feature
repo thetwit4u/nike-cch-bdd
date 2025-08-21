@@ -2,7 +2,7 @@ Feature: HITL error handling via System Events
 
   @hitl
   Scenario: Orchestrator HITL flow with simulated capability and HITL/exception service responses
-    Given I load scenario "../_external/hitl_error_handling_interactive"
+    Given I load scenario "_external/hitl_error_handling_interactive"
     And I set workflow definition from local file "import_us_v1.1.2-simplified-errorhandling.yaml" with s3 dest "workflows/import_us_v1.1.2-simplified-errorhandling.yaml"
     And I upload consignment "consignment.json" to s3 dest "data/consignment-${correlationId}.json" and set its URI in context
     And I will inject the workflow definition URI into the initial command
