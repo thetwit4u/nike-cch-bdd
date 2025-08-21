@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "tsc -p .",
-    "cucumber": "cucumber-js --require-module ts-node/register --require tests/cucumber-js/**/*.ts"
+    "cucumber": "cucumber-js --require-module ts-node/register --require 'tests/cucumber-js/**/*.ts' tests/cucumber-js/features/**/*.feature"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^10.3.2",
