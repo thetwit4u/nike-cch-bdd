@@ -2,10 +2,9 @@
   "name": "cch-bdd",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "build": "tsc -p .",
-    "cucumber": "cucumber-js --require-module ts-node/register --publish-quiet --require tests/cucumber-js/**/*.ts"
+    "cucumber": "cucumber-js --require-module ts-node/register --require tests/cucumber-js/**/*.ts"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^10.3.2",
