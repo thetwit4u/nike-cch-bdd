@@ -1,4 +1,4 @@
-import { S3Client, PutObjectCommand, GetObjectCommand, HeadBucketCommand, CreateBucketCommand, ListObjectsV2Command, DeleteObjectsCommand, DeleteBucketCommand, BucketLocationConstraint } from '@aws-sdk/client-s3';
+import { S3Client, PutObjectCommand, GetObjectCommand, HeadBucketCommand, CreateBucketCommand, ListObjectsV2Command, DeleteObjectsCommand, DeleteBucketCommand, BucketLocationConstraint, PutBucketPolicyCommand } from '@aws-sdk/client-s3';
 import { Readable } from 'stream';
 
 export async function uploadJson(s3: S3Client, bucket: string, key: string, obj: unknown) {
@@ -51,6 +51,30 @@ export async function emptyAndDeleteBucket(s3: S3Client, bucket: string) {
   } catch (e) {
     console.warn(`Failed to delete bucket ${bucket}:`, e);
   }
+}
+
+export async function grantReadForRole(
+  s3: S3Client,
+  bucket: string,
+  roleArn: string,
+  prefix: string = ''
+) {
+  const resourceObjects = prefix
+    ? `arn:aws:s3:::${bucket}/${prefix}*`
+    : `arn:aws:s3:::${bucket}/*`;
+  const policy = {
+    Version: '2012-10-17',
+    Statement: [
+      {
+        Sid: 'AllowRoleGetObject',
+        Effect: 'Allow',
+        Principal: { AWS: roleArn },
+        Action: ['s3:GetObject'],
+        Resource: resourceObjects
+      }
+    ]
+  };
+  await s3.send(new PutBucketPolicyCommand({ Bucket: bucket, Policy: JSON.stringify(policy) }));
 }
 
 

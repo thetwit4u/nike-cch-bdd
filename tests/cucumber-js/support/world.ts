@@ -6,6 +6,7 @@ import { SQSClient } from '@aws-sdk/client-sqs';
 import { SNSClient } from '@aws-sdk/client-sns';
 import { S3Client } from '@aws-sdk/client-s3';
 import { STSClient } from '@aws-sdk/client-sts';
+import { LambdaClient } from '@aws-sdk/client-lambda';
 import { randomUUID } from 'crypto';
 
 export interface RunnerContext {
@@ -21,6 +22,7 @@ export class CchWorld extends World {
   sns: SNSClient;
   s3: S3Client;
   sts: STSClient;
+  lambda: LambdaClient;
   ctx: RunnerContext;
   env: Record<string, string>;
 
@@ -31,6 +33,7 @@ export class CchWorld extends World {
     this.sns = new SNSClient({ region });
     this.s3 = new S3Client({ region });
     this.sts = new STSClient({ region });
+    this.lambda = new LambdaClient({ region });
     const user = process.env.TEST_USER || process.env.USER || 'user';
     const now = new Date();
     const nowCompact = now.toISOString().replace(/[-:TZ.]/g, '').slice(0, 14);
