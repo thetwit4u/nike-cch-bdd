@@ -1,0 +1,17 @@
+{
+  "workflowDefinitionURI": "${ctx:workflowDefinitionUri}",
+  "workflowInstanceId": "${workflowInstanceId}",
+  "correlationId": "${correlationId}",
+  "command": {
+    "type": "EVENT_WAIT_RESP",
+    "id": "${uuid}",
+    "source": "MockCapabilityService",
+    "timestamp": "${now}",
+    "status": "SUCCESS",
+    "payload": {
+      "resolution": "RESOLVED"
+    }
+  }
+}
+
+

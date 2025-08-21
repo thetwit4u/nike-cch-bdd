@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CCHSystemEvent",
+  "description": "A standardized event published by any CCH component to report a significant state change or business moment.",
+  "type": "object",
+  "$defs": {
+    "CCHMessage": {
+      "title": "CCH Message",
+      "description": "A standardized message object for reporting errors, warnings, or info.",
+      "type": "object",
+      "properties": {
+        "messageId": { "type": "string", "format": "uuid" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "level": { "enum": ["ERROR", "WARNING", "INFO"] },
+        "code": { "type": "string" },
+        "summary": { "type": "string" },
+        "context": { "type": "object", "additionalProperties": true }
+      },
+      "required": ["messageId", "timestamp", "level", "code", "summary"]
+    },
+    "ControllerContext": {
+      "type": "object",
+      "description": "Context specific to events published by the Trade Flow Controller.",
+      "properties": {
+        "plannedDischargeDate": { "type": "string", "format": "date-time" },
+        "voyageNbr": { "type": "string" },
+        "modeOfTransport": { "type": "string" },
+        "consignmentId": { "type": "string" },
+        "consignmentURI": { "type": "string", "format": "uri" },
+        "originCountry": { "type": "string" },
+        "dischargeCountry": { "type": "string" },
+        "customsTerritory": { "type": "string" },
+        "expectedNbrOfShipments": { "type": "integer" },
+        "actualNbrOfShipments": { "type": "integer" }
+      },
+      "required": ["plannedDischargeDate", "voyageNbr", "modeOfTransport", "consignmentId", "consignmentURI", "originCountry", "dischargeCountry", "customsTerritory", "expectedNbrOfShipments", "actualNbrOfShipments"]
+    },
+    "WorkflowStep": {
+      "type": "object",
+      "description": "Represents a single step within a workflow definition.",
+      "properties": {
+        "name": { "type": "string", "description": "The unique machine-readable name (ID) of the node." },
+        "title": { "type": "string", "description": "The human-readable title of the node." },
+        "type": { "type": "string", "description": "The type of the node (e.g., 'async_request', 'condition')." }
+      },
+      "required": ["name", "title", "type"]
+    }
+  },
+  "properties": {
+    "eventId": { "type": "string", "format": "uuid" },
+    "eventType": { "type": "string" },
+    "eventTimestamp": { "type": "string", "format": "date-time" },
+    "source": { "type": "string", "enum": ["WorkflowOrchestrator", "TradeFlowController"] },
+    "correlationId": { "type": "string" },
+    "businessContext": { "type": "object", "additionalProperties": true },
+    "workflowContext": {
+      "type": "object",
+      "properties": {
+        "workflowInstanceId": { "type": "string", "format": "uuid" },
+        "workflowName": { "type": "string" },
+        "workflowDefinitionURI": { "type": "string", "format": "uri" },
+        "consignmentId": { "type": "string" }
+      },
+      "required": ["workflowInstanceId", "workflowName", "workflowDefinitionURI"]
+    },
+    "controllerContext": { "$ref": "#/$defs/ControllerContext" },
+    "transition": {
+      "type": "object",
+      "properties": {
+        "currentStep": { "$ref": "#/$defs/WorkflowStep" },
+        "nextSteps": { "type": "array", "items": { "$ref": "#/$defs/WorkflowStep" } }
+      },
+      "required": ["currentStep"]
+    },
+    "messages": { "type": "array", "items": { "$ref": "#/$defs/CCHMessage" } }
+  },
+  "required": ["eventId", "eventType", "eventTimestamp", "source", "correlationId"],
+  "allOf": [
+    { "if": { "properties": { "source": { "const": "WorkflowOrchestrator" } } }, "then": { "required": ["workflowContext", "transition"] } },
+    { "if": { "properties": { "source": { "const": "TradeFlowController" } } }, "then": { "required": ["controllerContext", "transition"] } }
+  ]
+}
+

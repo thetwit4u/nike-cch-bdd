@@ -1,0 +1,31 @@
+{
+  "name": "cch-bdd",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p .",
+    "cucumber": "cucumber-js --require-module ts-node/register --publish-quiet --require tests/cucumber-js/**/*.ts"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.3.2",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.637.0",
+    "@aws-sdk/client-sns": "^3.637.0",
+    "@aws-sdk/client-sqs": "^3.637.0",
+    "@aws-sdk/client-sts": "^3.637.0",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "chalk": "^5.3.0",
+    "date-fns": "^3.6.0",
+    "dotenv": "^16.4.5",
+    "jsonpath-plus": "^10.3.0",
+    "uuid": "^9.0.1",
+    "yargs": "^17.7.2"
+  }
+}
+

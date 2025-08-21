@@ -1,0 +1,19 @@
+{
+  "workflowDefinitionURI": "${ctx:workflowDefinitionUri}",
+  "workflowInstanceId": "${workflowInstanceId}",
+  "correlationId": "${correlationId}",
+  "command": {
+    "type": "ASYNC_RESP",
+    "id": "${uuid}",
+    "source": "MockCapabilityService",
+    "timestamp": "${now}",
+    "status": "SUCCESS",
+    "payload": {
+      "consignmentImportEnrichedId": "enriched-${uuid}",
+      "consignmentImportEnrichedURI": "${ctx:consignmentUri}",
+      "importFilingPacks": []
+    }
+  }
+}
+
+

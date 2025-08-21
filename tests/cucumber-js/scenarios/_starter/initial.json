@@ -1,0 +1,16 @@
+{
+  "workflowInstanceId": "${uuid}",
+  "correlationId": "${correlationId}",
+  "workflowDefinitionURI": "s3://PLACEHOLDER/workflows/example.yaml",
+  "command": {
+    "type": "EVENT",
+    "id": "${uuid}",
+    "source": "BDD-Runner",
+    "timestamp": "${now}",
+    "payload": {
+      "consignmentId": "${businessKey}",
+      "_no_cache": true
+    }
+  }
+}
+

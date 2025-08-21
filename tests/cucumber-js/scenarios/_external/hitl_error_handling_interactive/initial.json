@@ -1,0 +1,18 @@
+{
+  "workflowDefinitionURI": "${ctx:workflowDefinitionUri}", 
+  "workflowInstanceId": "${workflowInstanceId}",
+  "correlationId": "${correlationId}",
+  "command": {
+    "type": "EVENT",
+    "id": "${uuid}",
+    "source": "BDD-HITL",
+    "timestamp": "${now}",
+    "payload": {
+      "consignmentId": "test-hitl-error-retry-12345",
+      "consignmentURI": "${ctx:consignmentUri}"
+      
+    }
+  }
+}
+
+
