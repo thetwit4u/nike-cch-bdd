@@ -1,4 +1,4 @@
-import { S3Client, PutObjectCommand, GetObjectCommand, HeadBucketCommand, CreateBucketCommand, ListObjectsV2Command, DeleteObjectsCommand, DeleteBucketCommand } from '@aws-sdk/client-s3';
+import { S3Client, PutObjectCommand, GetObjectCommand, HeadBucketCommand, CreateBucketCommand, ListObjectsV2Command, DeleteObjectsCommand, DeleteBucketCommand, BucketLocationConstraint } from '@aws-sdk/client-s3';
 import { Readable } from 'stream';
 
 export async function uploadJson(s3: S3Client, bucket: string, key: string, obj: unknown) {
@@ -24,7 +24,14 @@ export async function ensureBucketExists(s3: S3Client, bucket: string, region: s
     return false; // already existed
   } catch (e: any) {
     const isUsEast1 = region === 'us-east-1';
-    await s3.send(new CreateBucketCommand(isUsEast1 ? { Bucket: bucket } : { Bucket: bucket, CreateBucketConfiguration: { LocationConstraint: region } }));
+    const location = region as BucketLocationConstraint;
+    await s3.send(
+      new CreateBucketCommand(
+        isUsEast1
+          ? { Bucket: bucket }
+          : { Bucket: bucket, CreateBucketConfiguration: { LocationConstraint: location } }
+      )
+    );
     return true; // created
   }
 }
