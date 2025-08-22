@@ -1,0 +1,15 @@
+{
+  "workflowDefinitionURI": "${ctx:workflowDefinitionUri}",
+  "workflowInstanceId": "${workflowInstanceId}",
+  "correlationId": "${correlationId}-${uuid}",
+  "command": {
+    "type": "EVENT",
+    "id": "${uuid}",
+    "source": "BDD-HITL-v2.2.0",
+    "timestamp": "${now}",
+    "payload": {
+      "consignmentId": "${uuid}",
+      "consignmentURI": "${ctx:consignmentUri}"
+    }
+  }
+}

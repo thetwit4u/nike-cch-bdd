@@ -1,6 +1,6 @@
 Feature: HITL error handling via System Events
 
-  @hitl
+  @orchestrator @hitl @flow_simple @v1_1_2 @mocked @smoke
   Scenario: Orchestrator HITL flow with simulated capability and HITL/exception service responses
     Given I load scenario "_external/hitl_error_handling_interactive"
     And I set workflow definition from local file "import_us_v1.1.2-simplified-errorhandling.yaml" with s3 dest "workflows/import_us_v1.1.2-simplified-errorhandling.yaml"
