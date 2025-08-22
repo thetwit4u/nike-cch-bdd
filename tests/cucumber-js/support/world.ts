@@ -1,5 +1,18 @@
 import dotenv from 'dotenv';
-dotenv.config({ path: 'tests/cucumber-js/.local.env' });
+// Allow selecting env file via:
+// 1) CLI: --env dev (or --env=dev) or --env-file path
+// 2) Env vars: ENV=dev or BDD_ENV=dev or ENV_FILE=/path/to/file
+function getCliArg(name: string): string | undefined {
+  const idx = process.argv.findIndex(a => a === `--${name}` || a.startsWith(`--${name}=`));
+  if (idx === -1) return undefined;
+  const val = process.argv[idx].includes('=') ? process.argv[idx].split('=')[1] : process.argv[idx + 1];
+  return val;
+}
+const cliEnv = getCliArg('env');
+const cliEnvFile = getCliArg('env-file');
+const selectedEnv = cliEnv || process.env.ENV || process.env.BDD_ENV;
+const selectedEnvFile = cliEnvFile || process.env.ENV_FILE || (selectedEnv ? `tests/cucumber-js/.env.${selectedEnv}` : 'tests/cucumber-js/.local.env');
+dotenv.config({ path: selectedEnvFile });
 
 import { setWorldConstructor, IWorldOptions, World, setDefaultTimeout } from '@cucumber/cucumber';
 import { SQSClient } from '@aws-sdk/client-sqs';
