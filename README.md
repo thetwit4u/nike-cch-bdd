@@ -146,15 +146,15 @@ npm run cucumber -- \
   --format @cucumber/html-formatter:reports/cucumber.html
 ```
 
-#### Console formatter (qavajs)
-Rich console output with steps and attachments:
+#### Pretty console formatter (official)
+Readable step-by-step console output:
 
 ```bash
 # via npm script
 npm run cucumber:ui -- --tags @hitl
 
 # or directly
-npm run cucumber -- --format @qavajs/console-formatter --tags @hitl
+npm run cucumber -- --format @cucumber/pretty-formatter --tags @hitl
 ```
 
 Tip: for best rendering, run in a real terminal (Terminal/iTerm) rather than an IDE panel.

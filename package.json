@@ -5,11 +5,11 @@
   "scripts": {
     "build": "tsc -p .",
     "cucumber": "cucumber-js --require-module ts-node/register --require 'tests/cucumber-js/**/*.ts' tests/cucumber-js/features/**/*.feature",
-    "cucumber:ui": "npm run cucumber -- --format @qavajs/console-formatter"
+    "cucumber:ui": "npm run cucumber -- --format @cucumber/pretty-formatter"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^10.3.2",
-    "@qavajs/console-formatter": "^1.0.0",
+    "@cucumber/pretty-formatter": "^1.0.1",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.5.4"
