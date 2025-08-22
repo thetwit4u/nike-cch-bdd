@@ -6,6 +6,7 @@ This harness starts a flow (orchestrator via SQS; controller via S3/SQS), subscr
 1) Create `tests/cucumber-js/.local.env` with:
 - `AWS_REGION` (eu-west-1)
 - `COMMAND_QUEUE_URL` (URL or ARN) [required]
+- `CONTROLLER_QUEUE_URL` (URL or ARN) [required for controller flows]
 - `SYSTEM_EVENTS_TOPIC_ARN` [required]
 - `START_S3_BUCKET` (optional; temp bucket created if missing)
 - `START_S3_KEY_PREFIX` (default: `workflows/`)
@@ -46,6 +47,7 @@ ENV_FILE=/abs/path/.env.other npm run cucumber -- --tags @hitl
 
 ### Core steps
 - Start orchestrator (SQS only): `When I start the orchestrator scenario via "sqs"`
+- Start controller (S3 or SQS): `When I start the controller scenario via "s3"` or `"sqs"`
 - Upload workflow definition: `And I set workflow definition from local file "...yaml" with s3 dest "workflows/...yaml"`
 - Upload consignment & set URI: `And I upload consignment "consignment.json" to s3 dest "data/consignment-${correlationId}.json" and set its URI in context`
 - Wait for System Event: `Then I wait for a System Event matching jsonpath "$.correlationId == ${correlationId}" within 60 seconds`
