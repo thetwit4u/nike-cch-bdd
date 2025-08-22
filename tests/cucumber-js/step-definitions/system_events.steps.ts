@@ -10,6 +10,7 @@ import path from 'path';
 import { GetQueueAttributesCommand, SendMessageCommand } from '@aws-sdk/client-sqs';
 import {JSONPath} from 'jsonpath-plus';
 import { getJson } from '../support/s3';
+import { interpolate } from '../support/interpolator';
 
 let qm: QueueManager; let bus: MessageBus; let subArn = ''; let queueUrl = '';
 const ajv = buildAjv();
@@ -59,14 +60,20 @@ Then('I wait for a System Event matching jsonpath {string} within {int} seconds'
   const timeout = seconds * 1000;
   const evt = await bus.waitFor((e: SystemEvent) => {
     try {
-      const context = { correlationId: this.ctx.correlationId, workflowInstanceId: this.ctx.workflowInstanceId };
-      const expanded = expr.replace('${correlationId}', context.correlationId).replace('${workflowInstanceId}', context.workflowInstanceId);
+      const expanded = interpolate(expr, this.ctx, this.env) as unknown as string;
       // Support boolean expressions like $.correlationId == '...'
       if (expanded.includes('==')) {
         const [lhs, rhsRaw] = expanded.split('==').map(s => s.trim());
         const rhs = rhsRaw.replace(/^['"]|['"]$/g, '');
         const vals = JSONPath({ path: lhs, json: e }) as any[];
         return vals.some(v => String(v) === rhs);
+      }
+      // Support contains operator: $.path contains 'substring'
+      if (expanded.includes(' contains ')) {
+        const [lhs, rhsRaw] = expanded.split(' contains ').map(s => s.trim());
+        const rhs = rhsRaw.replace(/^['"]|['"]$/g, '');
+        const vals = JSONPath({ path: lhs, json: e }) as any[];
+        return vals.some(v => String(v).includes(rhs));
       }
       // Otherwise treat as path truthy
       const vals = JSONPath({ path: expanded, json: e }) as any[];
@@ -100,6 +107,35 @@ Then('I fetch JSON from s3 URI in businessContext at path {string} and compare w
   const fixture = JSON.parse(fs.readFileSync(path.join((this.ctx as any).scenarioPath, fixtureRel), 'utf-8'));
   if (JSON.stringify(actual) !== JSON.stringify(fixture)) {
     throw new Error('S3 JSON does not match expected fixture');
+  }
+});
+
+Then('I fetch JSON from s3 URI in businessContext at path {string} and compare JSON at path {string} with fixture {string} at path {string}', async function(this: CchWorld, uriJsonPath: string, jsonPath: string, fixtureRel: string, fixturePath: string) {
+  const evt = (this.ctx as any).lastEvent as SystemEvent;
+  if (!evt) throw new Error('No last System Event available');
+  const uris = JSONPath({ path: uriJsonPath, json: evt }) as string[];
+  if (!uris?.length) throw new Error(`No S3 URI found at path ${uriJsonPath}`);
+  const uri = uris[0];
+  const m = uri.match(/^s3:\/\/([^\/]+)\/(.+)$/);
+  if (!m) throw new Error(`Invalid s3 URI: ${uri}`);
+  const [, bucket, key] = m;
+  const actual = await getJson(this.s3, bucket, key);
+  const actualPart = JSONPath({ path: jsonPath, json: actual }) as any[];
+  const fixture = JSON.parse(fs.readFileSync(path.join((this.ctx as any).scenarioPath, fixtureRel), 'utf-8'));
+  const expectedPart = JSONPath({ path: fixturePath, json: fixture }) as any[];
+  if (JSON.stringify(actualPart) !== JSON.stringify(expectedPart)) {
+    throw new Error('Subset JSON does not match expected fixture subset');
+  }
+});
+
+Then('I compare event JSON at path {string} with fixture {string} at path {string}', async function(this: CchWorld, eventPath: string, fixtureRel: string, fixturePath: string) {
+  const evt = (this.ctx as any).lastEvent as SystemEvent;
+  if (!evt) throw new Error('No last System Event available');
+  const actualPart = JSONPath({ path: eventPath, json: evt }) as any[];
+  const fixture = JSON.parse(fs.readFileSync(path.join((this.ctx as any).scenarioPath, fixtureRel), 'utf-8'));
+  const expectedPart = JSONPath({ path: fixturePath, json: fixture }) as any[];
+  if (JSON.stringify(actualPart) !== JSON.stringify(expectedPart)) {
+    throw new Error('Event subset does not match expected fixture subset');
   }
 });
 

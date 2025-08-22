@@ -1,0 +1,18 @@
+{
+  "resourceType": "ship/shipment/full_payload_event",
+  "resourceVersion": "2.0.0",
+  "event": {
+    "id": "${uuid}",
+    "timestamp": "${now}",
+    "type": "SHIPPED"
+  },
+  "notification": {
+    "houseAirwayBillNumber": "43Z1216185-${ctx:captures.controllerStartUuid}",
+    "masterAirwayBillNumber": "20584015094",
+    "shipmentNumber": "6301642787"
+    
+    
+  }
+}
+
+

@@ -4,6 +4,8 @@ import fs from 'fs';
 import path from 'path';
 import { uploadJson } from '../support/s3';
 import { GetQueueAttributesCommand, SendMessageCommand } from '@aws-sdk/client-sqs';
+import { interpolate } from '../support/interpolator';
+import { randomUUID } from 'crypto';
 
 async function sendToQueue(world: CchWorld, queueUrl: string, body: any) {
   let isFifo = false;
@@ -22,9 +24,15 @@ async function sendToQueue(world: CchWorld, queueUrl: string, body: any) {
 // Controller start: supports s3 or sqs
 When('I start the controller scenario via {string}', async function(this: CchWorld, mode: string) {
   const scenarioPath = (this.ctx as any).scenarioPath as string;
-  const initial = JSON.parse(fs.readFileSync(path.join(scenarioPath, 'initial.json'), 'utf-8'));
-  initial.workflowInstanceId = this.ctx.workflowInstanceId;
-  initial.correlationId = this.ctx.correlationId;
+  let initial = JSON.parse(fs.readFileSync(path.join(scenarioPath, 'initial.json'), 'utf-8'));
+  // Prepare dynamic ctx and capture a deterministic UUID for correlation assertion
+  (this.ctx as any).captures = { ...(this.ctx as any).captures, controllerStartUuid: (this.ctx as any).captures?.controllerStartUuid || randomUUID() };
+  (this.ctx as any).ctx = { ...(this.ctx as any).ctx, correlationId: this.ctx.correlationId, workflowInstanceId: this.ctx.workflowInstanceId, captures: (this.ctx as any).captures };
+  // Interpolate tokens in the controller start payload
+  initial = interpolate(initial, this.ctx, this.env);
+  // Also include identifiers for traceability
+  (initial as any).workflowInstanceId = this.ctx.workflowInstanceId;
+  (initial as any).correlationId = this.ctx.correlationId;
   if (mode === 's3') {
     const bucket = this.env.START_S3_BUCKET; const prefix = this.env.START_S3_KEY_PREFIX || 'workflows/';
     if (!bucket) throw new Error('START_S3_BUCKET not set');
