@@ -1,17 +1,7 @@
 {
-  "resourceType": "ship/shipment/full_payload_event",
-  "resourceVersion": "2.0.0",
-  "event": {
-    "id": "${uuid}",
-    "timestamp": "${now}",
-    "type": "SHIPPED"
-  },
+  "$sample": "../../samples/20584015094_shipments_v2_6301642787.json",
   "notification": {
-    "houseAirwayBillNumber": "43Z1216185-${ctx:captures.controllerStartUuid}",
-    "masterAirwayBillNumber": "20584015094",
-    "shipmentNumber": "6301642787"
-    
-    
+    "houseAirwayBillNumber": "43Z1216185-${ctx:captures.controllerStartUuid}"
   }
 }
 

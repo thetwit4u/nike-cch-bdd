@@ -25,10 +25,27 @@ async function sendToQueue(world: CchWorld, queueUrl: string, body: any) {
 When('I start the controller scenario via {string}', async function(this: CchWorld, mode: string) {
   const scenarioPath = (this.ctx as any).scenarioPath as string;
   let initial = JSON.parse(fs.readFileSync(path.join(scenarioPath, 'initial.json'), 'utf-8'));
-  // Prepare dynamic ctx and capture a deterministic UUID for correlation assertion
+  // Support sample-overlay: if `$sample` path is provided, load sample and override only specified fields
+  if ((initial as any).$sample) {
+    const sampleRel = (initial as any).$sample as string;
+    const samplePath = path.join(scenarioPath, sampleRel);
+    let sample = JSON.parse(fs.readFileSync(samplePath, 'utf-8'));
+    // Prepare context for interpolation
+    (this.ctx as any).captures = { ...(this.ctx as any).captures, controllerStartUuid: (this.ctx as any).captures?.controllerStartUuid || randomUUID() };
+    (this.ctx as any).ctx = { ...(this.ctx as any).ctx, correlationId: this.ctx.correlationId, workflowInstanceId: this.ctx.workflowInstanceId, captures: (this.ctx as any).captures };
+    // Only allow overriding notification.houseAirwayBillNumber
+    const overrideHawb = (initial as any).notification?.houseAirwayBillNumber;
+    if (overrideHawb) {
+      const hawb = interpolate(overrideHawb, this.ctx, this.env) as unknown as string;
+      if (!sample.notification) sample.notification = {};
+      sample.notification.houseAirwayBillNumber = hawb;
+    }
+    initial = sample;
+  }
+  // Prepare dynamic ctx (if not set by sample-overlay path)
   (this.ctx as any).captures = { ...(this.ctx as any).captures, controllerStartUuid: (this.ctx as any).captures?.controllerStartUuid || randomUUID() };
   (this.ctx as any).ctx = { ...(this.ctx as any).ctx, correlationId: this.ctx.correlationId, workflowInstanceId: this.ctx.workflowInstanceId, captures: (this.ctx as any).captures };
-  // Interpolate tokens in the controller start payload
+  // Interpolate any tokens present (note: with sample-overlay, only HAWB is interpolated above)
   initial = interpolate(initial, this.ctx, this.env);
   // Also include identifiers for traceability
   (initial as any).workflowInstanceId = this.ctx.workflowInstanceId;
