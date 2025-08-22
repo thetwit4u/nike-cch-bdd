@@ -120,6 +120,45 @@ The feature `features/hitl_error_handling.feature` will:
 - Send simulated capability `ASYNC_RESP` messages to drive HITL ERROR → RESUME → SUCCESS
 - Validate the final consignment S3 payload matches `consignment.json`
 
+### Visual output options
+
+#### Terminal UI (progress bar)
+Use Cucumber's progress bar and a concise summary:
+
+```bash
+npm run cucumber -- --format progress-bar --format summary --tags @hitl
+```
+
+#### Local HTML report (official formatter)
+Generate a pretty HTML report locally:
+
+```bash
+npm install -D @cucumber/html-formatter
+npm run cucumber -- --format @cucumber/html-formatter:reports/cucumber.html --tags @hitl
+open reports/cucumber.html
+```
+
+You can combine formatters (e.g., progress bar + HTML):
+
+```bash
+npm run cucumber -- \
+  --format progress-bar \
+  --format @cucumber/html-formatter:reports/cucumber.html
+```
+
+#### Console formatter (qavajs)
+Rich console output with steps and attachments:
+
+```bash
+# via npm script
+npm run cucumber:ui -- --tags @hitl
+
+# or directly
+npm run cucumber -- --format @qavajs/console-formatter --tags @hitl
+```
+
+Tip: for best rendering, run in a real terminal (Terminal/iTerm) rather than an IDE panel.
+
 ### Authoring scenarios
 - Create a folder under `tests/cucumber-js/scenarios/<name>/` with:
   - `initial.json` – first message (full envelope) to send to `COMMAND_QUEUE_URL`

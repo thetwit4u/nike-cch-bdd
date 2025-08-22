@@ -4,20 +4,22 @@
   "private": true,
   "scripts": {
     "build": "tsc -p .",
-    "cucumber": "cucumber-js --require-module ts-node/register --require 'tests/cucumber-js/**/*.ts' tests/cucumber-js/features/**/*.feature"
+    "cucumber": "cucumber-js --require-module ts-node/register --require 'tests/cucumber-js/**/*.ts' tests/cucumber-js/features/**/*.feature",
+    "cucumber:ui": "npm run cucumber -- --format @qavajs/console-formatter"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^10.3.2",
+    "@qavajs/console-formatter": "^1.0.0",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.5.4"
   },
   "dependencies": {
+    "@aws-sdk/client-lambda": "^3.637.0",
     "@aws-sdk/client-s3": "^3.637.0",
     "@aws-sdk/client-sns": "^3.637.0",
     "@aws-sdk/client-sqs": "^3.637.0",
     "@aws-sdk/client-sts": "^3.637.0",
-    "@aws-sdk/client-lambda": "^3.637.0",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
     "chalk": "^5.3.0",
@@ -28,4 +30,3 @@
     "yargs": "^17.7.2"
   }
 }
-
