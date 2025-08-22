@@ -147,4 +147,15 @@ Then('I compare event JSON at path {string} with fixture {string} at path {strin
   }
 });
 
+Then('the last System Event jsonpath {string} contains {string}', function(this: CchWorld, pathExpr: string, needleRaw: string) {
+  const evt = (this.ctx as any).lastEvent as SystemEvent;
+  if (!evt) throw new Error('No last System Event available');
+  const expandedPath = interpolate(pathExpr, this.ctx, this.env) as unknown as string;
+  const needle = (interpolate(needleRaw, this.ctx, this.env) as unknown as string).replace(/^['"]|['"]$/g, '');
+  const vals = JSONPath({ path: expandedPath, json: evt }) as any[];
+  if (!vals?.some(v => String(v).includes(needle))) {
+    throw new Error(`Last System Event at ${expandedPath} does not contain expected substring`);
+  }
+});
+
 
