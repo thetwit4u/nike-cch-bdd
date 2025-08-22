@@ -1,0 +1,296 @@
+{
+    "consignment": {
+        "consignmentId": "4cd04fa3-a1d9-4f1f-a0ae-35c1668a5331",
+        "correlationId": "43Z1216185",
+        "billOfLadingNbr": "20584015094",
+        "totalShipmentCount": 1,
+        "totalGoodsHolderCount": 3,
+        "originAddress": {
+            "code": "SGN",
+            "name": "Ho Chi Minh City - VN",
+            "cityName": "Ho Chi Minh City",
+            "provinceStateRegionCode": "65",
+            "countryCode": "VN"
+        },
+        "dischargeAddress": {
+            "code": "ORD",
+            "name": "Chicago - US",
+            "postalCode": "60601",
+            "cityName": "Chicago",
+            "provinceStateRegionCode": "IL",
+            "countryCode": "US"
+        },
+        "originReceiptAddress": {
+            "code": "SGN",
+            "cityName": "TAN SON NHAT INTL",
+            "provinceStateRegionCode": "HC",
+            "countryCode": "VN"
+        },
+        "plannedDischargeDate": "2025-08-02",
+        "actualShippedTimestamp": "2025-07-31T12:00:00.000Z",
+        "transportVehicle": {
+            "modeOfTransportation": "AIR",
+            "voyageNumber": "NH834"
+        },
+        "transportHolders": [
+            {
+                "transportHolderNbr": "43Z1216185",
+                "typeCode": "CONTAINER",
+                "typeSizeCode": "9000"
+            }
+        ],
+        "carrier": {
+            "code": "EXDO",
+            "name": "Expeditors International of Washington,",
+            "addressLine1": "1015 Third Avenue",
+            "cityName": "Seattle",
+            "postalCode": "98104",
+            "provinceStateRegionCode": "WA",
+            "emailAddressText": "kristi.colleran@expeditors.com",
+            "telephoneNumber": "2066743400"
+        },
+        "forwarder": {
+            "code": "EXDO",
+            "name": "Expeditors International of Washington,",
+            "addressLine1": "1015 Third Avenue",
+            "cityName": "Seattle",
+            "postalCode": "98104",
+            "provinceStateRegionCode": "WA",
+            "emailAddressText": "kristi.colleran@expeditors.com",
+            "telephoneNumber": "2066743400"
+        },
+        "shipments": [
+            {
+                "shipmentNbr": "6301642787",
+                "isSamplesShipment": true,
+                "goodsHolderCount": 3,
+                "goodsHolderTypeCode": "CARTON",
+                "companyCode": "1220",
+                "shipmentChangeTimestamp": "2025-07-31T01:14:33.000Z",
+                "ultimateDestinationAddress": {
+                    "code": "1022",
+                    "name": "NRS - Samples",
+                    "addressLine1": "127 E Elk Trail",
+                    "postalCode": "60188-9300",
+                    "cityName": "Carol Stream",
+                    "provinceStateRegionCode": "IL",
+                    "countryCode": "US"
+                },
+                "goodsHolders": [
+                    {
+                        "goodsHolderNbr": "00095577970058275688",
+                        "weightInGrams": 3349.0,
+                        "volumeInCcm": 85073.92,
+                        "transportHolderNbr": "43Z1216185"
+                    },
+                    {
+                        "goodsHolderNbr": "00095577970058275657",
+                        "weightInGrams": 2580.0,
+                        "volumeInCcm": 53787.038,
+                        "transportHolderNbr": "43Z1216185"
+                    },
+                    {
+                        "goodsHolderNbr": "00095577970058275657",
+                        "weightInGrams": 2580.0,
+                        "volumeInCcm": 53787.038,
+                        "transportHolderNbr": "43Z1216185"
+                    },
+                    {
+                        "goodsHolderNbr": "00095577970058275848",
+                        "weightInGrams": 9320.0,
+                        "volumeInCcm": 59000.0,
+                        "transportHolderNbr": "43Z1216185"
+                    },
+                    {
+                        "goodsHolderNbr": "00095577970058275657",
+                        "weightInGrams": 2176.0,
+                        "volumeInCcm": 28887.039,
+                        "transportHolderNbr": "43Z1216185"
+                    },
+                    {
+                        "goodsHolderNbr": "00095577970058275657",
+                        "weightInGrams": 2176.0,
+                        "volumeInCcm": 28887.039,
+                        "transportHolderNbr": "43Z1216185"
+                    },
+                    {
+                        "goodsHolderNbr": "00095577970058275688",
+                        "weightInGrams": 3349.0,
+                        "volumeInCcm": 85073.92,
+                        "transportHolderNbr": "43Z1216185"
+                    }
+                ],
+                "deliveries": [
+                    {
+                        "deliveryNoteNbr": "2002590856",
+                        "crPoNbr": "6201848941",
+                        "crPoItemNbr": "03200",
+                        "invoiceNbr": "3601300779",
+                        "deliveryItems": [
+                            {
+                                "deliveryNoteItemNbr": "000010",
+                                "productCode": "IF8299-382",
+                                "size": "M",
+                                "divisionCode": "10",
+                                "quality": "SS",
+                                "quantity": 4,
+                                "uom": "EA",
+                                "crPoItemVariantNbr": 3201,
+                                "packingDetails": [
+                                    {
+                                        "goodsHolderNbr": "00095577970058275657",
+                                        "packedQuantity": 4
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "deliveryNoteNbr": "2002705798",
+                        "crPoNbr": "6201922686",
+                        "crPoItemNbr": "00200",
+                        "invoiceNbr": "3601315869",
+                        "deliveryItems": [
+                            {
+                                "deliveryNoteItemNbr": "000010",
+                                "productCode": "FN3303-407",
+                                "size": "L",
+                                "divisionCode": "10",
+                                "quality": "SS",
+                                "quantity": 22,
+                                "uom": "EA",
+                                "crPoItemVariantNbr": 201,
+                                "packingDetails": [
+                                    {
+                                        "goodsHolderNbr": "00095577970058275848",
+                                        "packedQuantity": 22
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "deliveryNoteNbr": "2002909425",
+                        "crPoNbr": "6201848941",
+                        "crPoItemNbr": "03300",
+                        "invoiceNbr": "3601300779",
+                        "deliveryItems": [
+                            {
+                                "deliveryNoteItemNbr": "000010",
+                                "productCode": "IF8299-833",
+                                "size": "M",
+                                "divisionCode": "10",
+                                "quality": "SS",
+                                "quantity": 4,
+                                "uom": "EA",
+                                "crPoItemVariantNbr": 3301,
+                                "packingDetails": [
+                                    {
+                                        "goodsHolderNbr": "00095577970058275657",
+                                        "packedQuantity": 4
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "deliveryNoteNbr": "2003030196",
+                        "crPoNbr": "6201848941",
+                        "crPoItemNbr": "03400",
+                        "invoiceNbr": "3601300779",
+                        "deliveryItems": [
+                            {
+                                "deliveryNoteItemNbr": "000010",
+                                "productCode": "IF8302-382",
+                                "size": "M",
+                                "divisionCode": "10",
+                                "quality": "SS",
+                                "quantity": 4,
+                                "uom": "EA",
+                                "crPoItemVariantNbr": 3401,
+                                "packingDetails": [
+                                    {
+                                        "goodsHolderNbr": "00095577970058275657",
+                                        "packedQuantity": 4
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "deliveryNoteNbr": "2003107037",
+                        "crPoNbr": "6201848941",
+                        "crPoItemNbr": "03500",
+                        "invoiceNbr": "3601300779",
+                        "deliveryItems": [
+                            {
+                                "deliveryNoteItemNbr": "000010",
+                                "productCode": "IF8302-416",
+                                "size": "M",
+                                "divisionCode": "10",
+                                "quality": "SS",
+                                "quantity": 4,
+                                "uom": "EA",
+                                "crPoItemVariantNbr": 3501,
+                                "packingDetails": [
+                                    {
+                                        "goodsHolderNbr": "00095577970058275657",
+                                        "packedQuantity": 4
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "deliveryNoteNbr": "2003222659",
+                        "crPoNbr": "6201848974",
+                        "crPoItemNbr": "01300",
+                        "invoiceNbr": "3601271065",
+                        "deliveryItems": [
+                            {
+                                "deliveryNoteItemNbr": "000010",
+                                "productCode": "IF1174-110",
+                                "size": "2",
+                                "divisionCode": "10",
+                                "quality": "SS",
+                                "quantity": 18,
+                                "uom": "EA",
+                                "crPoItemVariantNbr": 1301,
+                                "packingDetails": [
+                                    {
+                                        "goodsHolderNbr": "00095577970058275688",
+                                        "packedQuantity": 18
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "deliveryNoteNbr": "2003341304",
+                        "crPoNbr": "6201848974",
+                        "crPoItemNbr": "01400",
+                        "invoiceNbr": "3601271065",
+                        "deliveryItems": [
+                            {
+                                "deliveryNoteItemNbr": "000010",
+                                "productCode": "IF1174-371",
+                                "size": "2",
+                                "divisionCode": "10",
+                                "quality": "SS",
+                                "quantity": 18,
+                                "uom": "EA",
+                                "crPoItemVariantNbr": 1401,
+                                "packingDetails": [
+                                    {
+                                        "goodsHolderNbr": "00095577970058275688",
+                                        "packedQuantity": 18
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

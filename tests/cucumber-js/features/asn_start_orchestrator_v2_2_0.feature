@@ -8,7 +8,7 @@ Feature: Controller ASN start → Orchestrator HITL flow v2.2.0 (mocked)
     Then I wait for a System Event matching jsonpath "$.transition.currentStep.name == 'Enrich_Consignment'" within 60 seconds
     And I sync correlation and instance from last System Event
     # Optional: correlation contains the injected UUID captured at controller start
-    # Then I wait for a System Event matching jsonpath "$.correlationId contains ${ctx:captures.controllerStartUuid}" within 60 seconds
+    Then I wait for a System Event matching jsonpath "$.correlationId contains ${ctx:captures.controllerStartUuid}" within 60 seconds
 
     When I send ASYNC_RESP from fixture "../hitl_error_handling_interactive_v2.2.0/Enrich_Consignment_ERROR.json"
     Then I wait for a System Event matching jsonpath "$.transition.currentStep.name == 'Wait_Enrich_Exception_Resolution'" within 60 seconds

@@ -1,0 +1,1375 @@
+{
+  "resourceType": "ship/shipment/full_payload_event",
+  "resourceVersion": "2.0.0",
+  "event": {
+    "id": "35035E9D-6659-1FD0-9BB5-80346C6357F6",
+    "timestamp": "2025-07-31T01:16:38.480Z",
+    "type": "SHIPPED",
+    "actionCode": "CREATE",
+    "sourceSystemName": "FHPCLNT300",
+    "businessKeyStructure": "idReferenceNumber|shipmentTypeCode|shipmentOriginTypeCode|shipmentOriginCode|shipmentDestinationTypeCode|shipmentDestinationCode|salesChannelTypeName|sourceSystem|shipmentStatusCode|aws_region|event_id|ultimateDestinationTypeCode|ultimateDestinationCode",
+    "businessKeyValue": "6301642787|INBOUND|IATA|SGN|DC|1022||FHPCLNT300||us-east-1|35035E9D-6659-1FD0-9BB5-80346C6357F6|DC|1022",
+    "traceId": "59fb92b56215fff72527183eba5038a1"
+  },
+  "notification": {
+    "id": "f67ebda7-a431-44b0-860f-b43a7de2db4e",
+    "idReferenceNumber": "6301642787",
+    "shipmentNumber": "6301642787",
+    "shipmentTypeSystemCode": "IB02",
+    "shipmentTypeSystemDescription": "IB02 IB AF (Direct)",
+    "shipmentTypeCode": "INBOUND",
+    "shipmentSubTypeSystemCode": "SMPLS DC-US",
+    "bolNumber": "20584015094",
+    "shipmentStatusCode": "SHIPPED",
+    "shipmentStatusSystemCode": "03",
+    "transportVehicleTypeCode": "AF",
+    "transportVehicleTypeDescription": "Air Freight",
+    "transportationModeCode": "AIR",
+    "legIndicatorCode": "4",
+    "legIndicatorDescription": "Direct Leg",
+    "companyCode": "1220",
+    "companyDescription": "NIKE Retail Services,Inc.",
+    "executionOrganizationSystemCode": "Z001",
+    "shipmentVoyageNumber": "NH834",
+    "shipmentTrackingNumber": "20584015094",
+    "totalNumberOfContainerCount": 1,
+    "goodsHolderTypeCode": "CARTON",
+    "goodsHolderCount": 3,
+    "costCalculationStatusCode": "01",
+    "actualServiceLevelCode": "PD",
+    "houseAirwayBillNumber": "43Z1216185",
+    "masterAirwayBillNumber": "20584015094",
+    "thirdPartyShipmentSelfIdentifier": "395222437340",
+    "createdByIdentifier": "CP_FTHMT_FHP",
+    "updatedByIdentifier": "CP_FTHMT_FHP",
+    "shipmentDates": {
+      "shipmentCreateTimestamp": "2025-07-31T01:08:31Z",
+      "shipmentChangeTimestamp": "2025-07-31T01:14:33Z",
+      "actualShipmentPlannedDate": "2025-07-31",
+      "plannedDischargeDate": "2025-08-02",
+      "actualShippedTimestamp": "2025-07-31T12:00:00Z",
+      "estimatedDeliveryTimestamp": "2025-08-04T12:00:00Z"
+    },
+    "shipmentOriginReceiptAddress": {
+      "shipmentOriginReceiptCode": "SGN",
+      "shipmentOriginReceiptTypeCode": "IATA",
+      "cityName": "TAN SON NHAT INTL",
+      "countryCode": "VN",
+      "provinceStateRegionCode": "HC"
+    },
+    "shipmentOriginAddress": {
+      "shipmentOriginCode": "SGN",
+      "shipmentOriginTypeCode": "IATA",
+      "shipmentOriginName": "Ho Chi Minh City - VN",
+      "cityName": "Ho Chi Minh City",
+      "countryCode": "VN",
+      "provinceStateRegionCode": "65",
+      "localTimeZoneCode": "UTC+7"
+    },
+    "shipmentDischargeAddress": {
+      "shipmentDischargeCode": "ORD",
+      "shipmentDischargeTypeCode": "IATA",
+      "shipmentDischargeName": "Chicago - US",
+      "cityName": "Chicago",
+      "countryCode": "US",
+      "postalCode": "60601",
+      "provinceStateRegionCode": "IL"
+    },
+    "shipmentDestinationAddress": {
+      "shipmentDestinationCode": "1022",
+      "shipmentDestinationTypeCode": "DC",
+      "shipmentDestinationName": "Nike USA - Samples",
+      "addressLine1Text": "127 E Elk Trail",
+      "cityName": "Carol Stream",
+      "countryCode": "US",
+      "postalCode": "60188-9300",
+      "provinceStateRegionCode": "IL"
+    },
+    "shipmentUltimateDestinationAddress": {
+      "shipmentUltimateDestinationCode": "1022",
+      "shipmentUltimateDestinationTypeCode": "DC",
+      "shipmentUltimateDestinationName": "NRS - Samples",
+      "addressLine1Text": "127 E Elk Trail",
+      "cityName": "Carol Stream",
+      "countryCode": "US",
+      "postalCode": "60188-9300",
+      "provinceStateRegionCode": "IL",
+      "languageCode": "en"
+    },
+    "shipmentVendors": [
+      {
+        "vendorTypeCode": "FORWARDER",
+        "vendorCode": "EXDO",
+        "vendorName": "Expeditors International of Washington,",
+        "vendorName2": "Expeditors International of Washington,",
+        "addressLine1Text": "1015 Third Avenue",
+        "cityName": "Seattle",
+        "countryCode": "US",
+        "postalCode": "98104",
+        "provinceStateRegionCode": "WA",
+        "emailAddressText": "kristi.colleran@expeditors.com",
+        "telephoneNumber": "2066743400",
+        "languageCode": "en"
+      },
+      {
+        "vendorTypeCode": "CARRIER",
+        "vendorCode": "EXDO",
+        "vendorName": "Expeditors International of Washington,",
+        "vendorName2": "Expeditors International of Washington,",
+        "addressLine1Text": "1015 Third Avenue",
+        "cityName": "Seattle",
+        "countryCode": "US",
+        "postalCode": "98104",
+        "provinceStateRegionCode": "WA",
+        "emailAddressText": "kristi.colleran@expeditors.com",
+        "telephoneNumber": "2066743400",
+        "languageCode": "en"
+      }
+    ],
+    "shipmentActivities": [
+      {
+        "activitySequenceNumber": 1,
+        "activityTypeCode": "MOVEMENT",
+        "transportVehicleTypeCode": "AF",
+        "vendorCode": "EXDO",
+        "activityOriginAddress": {
+          "activityOriginCode": "SGN",
+          "activityOriginTypeCode": "IATA",
+          "activityOriginName": "Ho Chi Minh City - VN",
+          "cityName": "Ho Chi Minh City",
+          "countryCode": "VN",
+          "provinceStateRegionCode": "65"
+        },
+        "activityDestinationAddress": {
+          "activityDestinationCode": "ORD",
+          "activityDestinationTypeCode": "IATA",
+          "activityDestinationName": "Chicago - US",
+          "cityName": "Chicago",
+          "countryCode": "US",
+          "postalCode": "60601",
+          "provinceStateRegionCode": "IL"
+        }
+      },
+      {
+        "activitySequenceNumber": 2,
+        "activityTypeCode": "MOVEMENT",
+        "transportVehicleTypeCode": "TR",
+        "activityOriginAddress": {
+          "activityOriginCode": "ORD",
+          "activityOriginTypeCode": "IATA",
+          "activityOriginName": "Chicago - US",
+          "cityName": "Chicago",
+          "countryCode": "US",
+          "postalCode": "60601",
+          "provinceStateRegionCode": "IL"
+        },
+        "activityDestinationAddress": {
+          "activityDestinationCode": "1022",
+          "activityDestinationName": "Nike USA - Samples",
+          "addressLine1Text": "127 E Elk Trail",
+          "cityName": "Carol Stream",
+          "countryCode": "US",
+          "postalCode": "60188-9300",
+          "provinceStateRegionCode": "IL"
+        }
+      }
+    ],
+    "shipmentMeasures": {
+      "netWeight": {
+        "measureValue": 25.0,
+        "measureUOM": "KG"
+      },
+      "grossWeight": {
+        "measureValue": 25.0,
+        "measureUOM": "KG"
+      },
+      "grossVolume": {
+        "measureValue": 0.14,
+        "measureUOM": "M3"
+      }
+    },
+    "relatedShipmentsInformation": {
+      "totalShipmentCount": 1,
+      "totalGoodsHolderCount": 3,
+      "totalOrderLineCount": 7
+    },
+    "deliveries": [
+      {
+        "deliveryNoteNumber": "2002590856",
+        "receiptId": "SIV0000000193750",
+        "assignedNodeCode": "1022",
+        "incoTermsCode": "FCA",
+        "incoTermsCommentsText": "DELIVERY POINT",
+        "goodsHolderTypeCode": "CARTON",
+        "goodsHolderCount": 1,
+        "plannedGoodsReceiptDate": "2025-08-04",
+        "deliveryCreateTimestamp": "2025-07-31T06:06:52Z",
+        "deliveryChangeTimestamp": "2025-07-31T05:00:00Z",
+        "createdByIdentifier": "CP_FTHMT_FHP",
+        "updatedByIdentifier": "CP_FTHMT_FHP",
+        "deliveryVendors": [
+          {
+            "vendorTypeCode": "FACTORY",
+            "vendorCode": "SIV",
+            "vendorName": "SOUTH ISLAND GARMENT SDN BHD",
+            "addressLine1Text": "2468, Solok Perusahaan Dua",
+            "cityName": "Perai, Penang",
+            "countryCode": "MY",
+            "postalCode": "13600",
+            "provinceStateRegionCode": "PIN",
+            "languageCode": "EN"
+          }
+        ],
+        "deliveryMeasures": {
+          "netWeight": {
+            "measureValue": 1.436,
+            "measureUOM": "KG"
+          },
+          "grossWeight": {
+            "measureValue": 1.436,
+            "measureUOM": "KG"
+          }
+        },
+        "deliveryReferenceAttributes": [
+          {
+            "referenceTypeCode": "PURCHASEORDER_NUMBER",
+            "referenceText": "6201848941"
+          },
+          {
+            "referenceTypeCode": "PURCHASEORDER_ITEM_NUMBER",
+            "referenceText": "03200"
+          },
+          {
+            "referenceTypeCode": "INVOICE_NUMBER",
+            "referenceText": "3601300779"
+          },
+          {
+            "referenceTypeCode": "INVOICE_DATE",
+            "referenceText": "2025-07-23"
+          },
+          {
+            "referenceTypeCode": "MATERIAL_GROUP_CODE",
+            "referenceText": "N1115210"
+          }
+        ],
+        "deliveryTexts": [
+          {
+            "textTypeCode": "GENERAL_TEXT",
+            "textLine": "0.0 KG"
+          },
+          {
+            "textTypeCode": "GENERAL_TEXT",
+            "textLine": "0.0 M3"
+          }
+        ],
+        "deliveryItems": [
+          {
+            "deliveryNoteItemNumber": "000010",
+            "productCode": "IF8299-382",
+            "sizeCode": "M",
+            "systemItemCode": "IF8299-382-001",
+            "upc": "00198730857510",
+            "qualityCode": "SS",
+            "inventorySegmentationCode": "ABS",
+            "batchNumber": "0045454844",
+            "divisionCode": "10",
+            "baseUOM": "EA",
+            "deliveryQuantity": 4,
+            "uOM": "EA",
+            "originCountryCode": "VN",
+            "storageLocationCode": "1000",
+            "deliveryItemReferenceAttributes": [
+              {
+                "referenceTypeCode": "STYLE_DESCRIPTION",
+                "referenceText": "G ACG SKORT"
+              },
+              {
+                "referenceTypeCode": "PO_VARIANT_LINE_ITEM",
+                "referenceText": "003201"
+              }
+            ],
+            "deliveryItemMeasures": {
+              "netWeight": {
+                "measureValue": 1.436,
+                "measureUOM": "KG"
+              },
+              "grossWeight": {
+                "measureValue": 1.436,
+                "measureUOM": "KG"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "deliveryNoteNumber": "2002705798",
+        "receiptId": "SIV0000000193926",
+        "assignedNodeCode": "1022",
+        "incoTermsCode": "FCA",
+        "incoTermsCommentsText": "DELIVERY POINT",
+        "goodsHolderTypeCode": "CARTON",
+        "goodsHolderCount": 1,
+        "plannedGoodsReceiptDate": "2025-08-04",
+        "deliveryCreateTimestamp": "2025-07-31T06:06:52Z",
+        "deliveryChangeTimestamp": "2025-07-31T05:00:00Z",
+        "createdByIdentifier": "CP_FTHMT_FHP",
+        "updatedByIdentifier": "CP_FTHMT_FHP",
+        "deliveryVendors": [
+          {
+            "vendorTypeCode": "FACTORY",
+            "vendorCode": "SIV",
+            "vendorName": "SOUTH ISLAND GARMENT SDN BHD",
+            "addressLine1Text": "2468, Solok Perusahaan Dua",
+            "cityName": "Perai, Penang",
+            "countryCode": "MY",
+            "postalCode": "13600",
+            "provinceStateRegionCode": "PIN",
+            "languageCode": "EN"
+          }
+        ],
+        "deliveryMeasures": {
+          "netWeight": {
+            "measureValue": 8.58,
+            "measureUOM": "KG"
+          },
+          "grossWeight": {
+            "measureValue": 8.58,
+            "measureUOM": "KG"
+          },
+          "chargeWeight": {
+            "measureValue": 5.6,
+            "measureUOM": "KG"
+          },
+          "grossVolume": {
+            "measureValue": 0.03,
+            "measureUOM": "M3"
+          },
+          "chargeVolume": {
+            "measureValue": 0.03,
+            "measureUOM": "M3"
+          }
+        },
+        "deliveryReferenceAttributes": [
+          {
+            "referenceTypeCode": "PURCHASEORDER_NUMBER",
+            "referenceText": "6201922686"
+          },
+          {
+            "referenceTypeCode": "PURCHASEORDER_ITEM_NUMBER",
+            "referenceText": "00200"
+          },
+          {
+            "referenceTypeCode": "INVOICE_NUMBER",
+            "referenceText": "3601315869"
+          },
+          {
+            "referenceTypeCode": "INVOICE_DATE",
+            "referenceText": "2025-07-23"
+          },
+          {
+            "referenceTypeCode": "MATERIAL_GROUP_CODE",
+            "referenceText": "N1115218"
+          }
+        ],
+        "deliveryTexts": [
+          {
+            "textTypeCode": "GENERAL_TEXT",
+            "textLine": "5.6 KG"
+          },
+          {
+            "textTypeCode": "GENERAL_TEXT",
+            "textLine": "0.03 M3"
+          }
+        ],
+        "deliveryItems": [
+          {
+            "deliveryNoteItemNumber": "000010",
+            "productCode": "FN3303-407",
+            "sizeCode": "L",
+            "systemItemCode": "FN3303-407-006",
+            "upc": "00198731560235",
+            "qualityCode": "SS",
+            "inventorySegmentationCode": "ABS",
+            "batchNumber": "0046520039",
+            "divisionCode": "10",
+            "baseUOM": "EA",
+            "deliveryQuantity": 22,
+            "uOM": "EA",
+            "originCountryCode": "VN",
+            "storageLocationCode": "1000",
+            "deliveryItemReferenceAttributes": [
+              {
+                "referenceTypeCode": "STYLE_DESCRIPTION",
+                "referenceText": "M NK CLUB SHORT WVN"
+              },
+              {
+                "referenceTypeCode": "PO_VARIANT_LINE_ITEM",
+                "referenceText": "000201"
+              }
+            ],
+            "deliveryItemMeasures": {
+              "netWeight": {
+                "measureValue": 8.58,
+                "measureUOM": "KG"
+              },
+              "grossWeight": {
+                "measureValue": 8.58,
+                "measureUOM": "KG"
+              },
+              "grossVolume": {
+                "measureValue": 0.03,
+                "measureUOM": "M3"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "deliveryNoteNumber": "2002909425",
+        "receiptId": "SIV0000000193751",
+        "assignedNodeCode": "1022",
+        "incoTermsCode": "FCA",
+        "incoTermsCommentsText": "DELIVERY POINT",
+        "goodsHolderTypeCode": "CARTON",
+        "goodsHolderCount": 1,
+        "plannedGoodsReceiptDate": "2025-08-04",
+        "deliveryCreateTimestamp": "2025-07-31T06:06:52Z",
+        "deliveryChangeTimestamp": "2025-07-31T05:00:00Z",
+        "createdByIdentifier": "CP_FTHMT_FHP",
+        "updatedByIdentifier": "CP_FTHMT_FHP",
+        "deliveryVendors": [
+          {
+            "vendorTypeCode": "FACTORY",
+            "vendorCode": "SIV",
+            "vendorName": "SOUTH ISLAND GARMENT SDN BHD",
+            "addressLine1Text": "2468, Solok Perusahaan Dua",
+            "cityName": "Perai, Penang",
+            "countryCode": "MY",
+            "postalCode": "13600",
+            "provinceStateRegionCode": "PIN",
+            "languageCode": "EN"
+          }
+        ],
+        "deliveryMeasures": {
+          "netWeight": {
+            "measureValue": 1.436,
+            "measureUOM": "KG"
+          },
+          "grossWeight": {
+            "measureValue": 1.436,
+            "measureUOM": "KG"
+          }
+        },
+        "deliveryReferenceAttributes": [
+          {
+            "referenceTypeCode": "PURCHASEORDER_NUMBER",
+            "referenceText": "6201848941"
+          },
+          {
+            "referenceTypeCode": "PURCHASEORDER_ITEM_NUMBER",
+            "referenceText": "03300"
+          },
+          {
+            "referenceTypeCode": "INVOICE_NUMBER",
+            "referenceText": "3601300779"
+          },
+          {
+            "referenceTypeCode": "INVOICE_DATE",
+            "referenceText": "2025-07-23"
+          },
+          {
+            "referenceTypeCode": "MATERIAL_GROUP_CODE",
+            "referenceText": "N1115210"
+          }
+        ],
+        "deliveryTexts": [
+          {
+            "textTypeCode": "GENERAL_TEXT",
+            "textLine": "0.0 KG"
+          },
+          {
+            "textTypeCode": "GENERAL_TEXT",
+            "textLine": "0.0 M3"
+          }
+        ],
+        "deliveryItems": [
+          {
+            "deliveryNoteItemNumber": "000010",
+            "productCode": "IF8299-833",
+            "sizeCode": "M",
+            "systemItemCode": "IF8299-833-005",
+            "upc": "00198731034057",
+            "qualityCode": "SS",
+            "inventorySegmentationCode": "ABS",
+            "batchNumber": "0045454848",
+            "divisionCode": "10",
+            "baseUOM": "EA",
+            "deliveryQuantity": 4,
+            "uOM": "EA",
+            "originCountryCode": "VN",
+            "storageLocationCode": "1000",
+            "deliveryItemReferenceAttributes": [
+              {
+                "referenceTypeCode": "STYLE_DESCRIPTION",
+                "referenceText": "G ACG SKORT"
+              },
+              {
+                "referenceTypeCode": "PO_VARIANT_LINE_ITEM",
+                "referenceText": "003301"
+              }
+            ],
+            "deliveryItemMeasures": {
+              "netWeight": {
+                "measureValue": 1.436,
+                "measureUOM": "KG"
+              },
+              "grossWeight": {
+                "measureValue": 1.436,
+                "measureUOM": "KG"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "deliveryNoteNumber": "2003030196",
+        "receiptId": "SIV0000000193752",
+        "assignedNodeCode": "1022",
+        "incoTermsCode": "FCA",
+        "incoTermsCommentsText": "DELIVERY POINT",
+        "goodsHolderTypeCode": "CARTON",
+        "goodsHolderCount": 1,
+        "plannedGoodsReceiptDate": "2025-08-04",
+        "deliveryCreateTimestamp": "2025-07-31T06:06:52Z",
+        "deliveryChangeTimestamp": "2025-07-31T05:00:00Z",
+        "createdByIdentifier": "CP_FTHMT_FHP",
+        "updatedByIdentifier": "CP_FTHMT_FHP",
+        "deliveryVendors": [
+          {
+            "vendorTypeCode": "FACTORY",
+            "vendorCode": "SIV",
+            "vendorName": "SOUTH ISLAND GARMENT SDN BHD",
+            "addressLine1Text": "2468, Solok Perusahaan Dua",
+            "cityName": "Perai, Penang",
+            "countryCode": "MY",
+            "postalCode": "13600",
+            "provinceStateRegionCode": "PIN",
+            "languageCode": "EN"
+          }
+        ],
+        "deliveryMeasures": {
+          "netWeight": {
+            "measureValue": 1.84,
+            "measureUOM": "KG"
+          },
+          "grossWeight": {
+            "measureValue": 1.84,
+            "measureUOM": "KG"
+          },
+          "chargeWeight": {
+            "measureValue": 1.3,
+            "measureUOM": "KG"
+          },
+          "grossVolume": {
+            "measureValue": 0.025,
+            "measureUOM": "M3"
+          },
+          "chargeVolume": {
+            "measureValue": 0.01,
+            "measureUOM": "M3"
+          }
+        },
+        "deliveryReferenceAttributes": [
+          {
+            "referenceTypeCode": "PURCHASEORDER_NUMBER",
+            "referenceText": "6201848941"
+          },
+          {
+            "referenceTypeCode": "PURCHASEORDER_ITEM_NUMBER",
+            "referenceText": "03400"
+          },
+          {
+            "referenceTypeCode": "INVOICE_NUMBER",
+            "referenceText": "3601300779"
+          },
+          {
+            "referenceTypeCode": "INVOICE_DATE",
+            "referenceText": "2025-07-23"
+          },
+          {
+            "referenceTypeCode": "MATERIAL_GROUP_CODE",
+            "referenceText": "N1115225"
+          }
+        ],
+        "deliveryTexts": [
+          {
+            "textTypeCode": "GENERAL_TEXT",
+            "textLine": "1.3 KG"
+          },
+          {
+            "textTypeCode": "GENERAL_TEXT",
+            "textLine": "0.01 M3"
+          }
+        ],
+        "deliveryItems": [
+          {
+            "deliveryNoteItemNumber": "000010",
+            "productCode": "IF8302-382",
+            "sizeCode": "M",
+            "systemItemCode": "IF8302-382-004",
+            "upc": "00198731021071",
+            "qualityCode": "SS",
+            "inventorySegmentationCode": "ABS",
+            "batchNumber": "0045454864",
+            "divisionCode": "10",
+            "baseUOM": "EA",
+            "deliveryQuantity": 4,
+            "uOM": "EA",
+            "originCountryCode": "VN",
+            "storageLocationCode": "1000",
+            "deliveryItemReferenceAttributes": [
+              {
+                "referenceTypeCode": "STYLE_DESCRIPTION",
+                "referenceText": "K ACG CARGO SHORT"
+              },
+              {
+                "referenceTypeCode": "PO_VARIANT_LINE_ITEM",
+                "referenceText": "003401"
+              }
+            ],
+            "deliveryItemMeasures": {
+              "netWeight": {
+                "measureValue": 1.84,
+                "measureUOM": "KG"
+              },
+              "grossWeight": {
+                "measureValue": 1.84,
+                "measureUOM": "KG"
+              },
+              "grossVolume": {
+                "measureValue": 0.025,
+                "measureUOM": "M3"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "deliveryNoteNumber": "2003107037",
+        "receiptId": "SIV0000000193753",
+        "assignedNodeCode": "1022",
+        "incoTermsCode": "FCA",
+        "incoTermsCommentsText": "DELIVERY POINT",
+        "goodsHolderTypeCode": "CARTON",
+        "goodsHolderCount": 1,
+        "plannedGoodsReceiptDate": "2025-08-04",
+        "deliveryCreateTimestamp": "2025-07-31T06:06:51Z",
+        "deliveryChangeTimestamp": "2025-07-31T05:00:00Z",
+        "createdByIdentifier": "CP_FTHMT_FHP",
+        "updatedByIdentifier": "CP_FTHMT_FHP",
+        "deliveryVendors": [
+          {
+            "vendorTypeCode": "FACTORY",
+            "vendorCode": "SIV",
+            "vendorName": "SOUTH ISLAND GARMENT SDN BHD",
+            "addressLine1Text": "2468, Solok Perusahaan Dua",
+            "cityName": "Perai, Penang",
+            "countryCode": "MY",
+            "postalCode": "13600",
+            "provinceStateRegionCode": "PIN",
+            "languageCode": "EN"
+          }
+        ],
+        "deliveryMeasures": {
+          "netWeight": {
+            "measureValue": 1.84,
+            "measureUOM": "KG"
+          },
+          "grossWeight": {
+            "measureValue": 1.84,
+            "measureUOM": "KG"
+          },
+          "grossVolume": {
+            "measureValue": 0.025,
+            "measureUOM": "M3"
+          }
+        },
+        "deliveryReferenceAttributes": [
+          {
+            "referenceTypeCode": "PURCHASEORDER_NUMBER",
+            "referenceText": "6201848941"
+          },
+          {
+            "referenceTypeCode": "PURCHASEORDER_ITEM_NUMBER",
+            "referenceText": "03500"
+          },
+          {
+            "referenceTypeCode": "INVOICE_NUMBER",
+            "referenceText": "3601300779"
+          },
+          {
+            "referenceTypeCode": "INVOICE_DATE",
+            "referenceText": "2025-07-23"
+          },
+          {
+            "referenceTypeCode": "MATERIAL_GROUP_CODE",
+            "referenceText": "N1115225"
+          }
+        ],
+        "deliveryTexts": [
+          {
+            "textTypeCode": "GENERAL_TEXT",
+            "textLine": "0.0 KG"
+          },
+          {
+            "textTypeCode": "GENERAL_TEXT",
+            "textLine": "0.0 M3"
+          }
+        ],
+        "deliveryItems": [
+          {
+            "deliveryNoteItemNumber": "000010",
+            "productCode": "IF8302-416",
+            "sizeCode": "M",
+            "systemItemCode": "IF8302-416-004",
+            "upc": "00198731038680",
+            "qualityCode": "SS",
+            "inventorySegmentationCode": "ABS",
+            "batchNumber": "0045454867",
+            "divisionCode": "10",
+            "baseUOM": "EA",
+            "deliveryQuantity": 4,
+            "uOM": "EA",
+            "originCountryCode": "VN",
+            "storageLocationCode": "1000",
+            "deliveryItemReferenceAttributes": [
+              {
+                "referenceTypeCode": "STYLE_DESCRIPTION",
+                "referenceText": "K ACG CARGO SHORT"
+              },
+              {
+                "referenceTypeCode": "PO_VARIANT_LINE_ITEM",
+                "referenceText": "003501"
+              }
+            ],
+            "deliveryItemMeasures": {
+              "netWeight": {
+                "measureValue": 1.84,
+                "measureUOM": "KG"
+              },
+              "grossWeight": {
+                "measureValue": 1.84,
+                "measureUOM": "KG"
+              },
+              "grossVolume": {
+                "measureValue": 0.025,
+                "measureUOM": "M3"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "deliveryNoteNumber": "2003222659",
+        "receiptId": "SIV0000000193754",
+        "assignedNodeCode": "1022",
+        "incoTermsCode": "FCA",
+        "incoTermsCommentsText": "DELIVERY POINT",
+        "goodsHolderTypeCode": "CARTON",
+        "goodsHolderCount": 1,
+        "plannedGoodsReceiptDate": "2025-08-04",
+        "deliveryCreateTimestamp": "2025-07-31T06:06:52Z",
+        "deliveryChangeTimestamp": "2025-07-31T05:00:00Z",
+        "createdByIdentifier": "CP_FTHMT_FHP",
+        "updatedByIdentifier": "CP_FTHMT_FHP",
+        "deliveryVendors": [
+          {
+            "vendorTypeCode": "FACTORY",
+            "vendorCode": "SIV",
+            "vendorName": "SOUTH ISLAND GARMENT SDN BHD",
+            "addressLine1Text": "2468, Solok Perusahaan Dua",
+            "cityName": "Perai, Penang",
+            "countryCode": "MY",
+            "postalCode": "13600",
+            "provinceStateRegionCode": "PIN",
+            "languageCode": "EN"
+          }
+        ],
+        "deliveryMeasures": {
+          "netWeight": {
+            "measureValue": 2.16,
+            "measureUOM": "KG"
+          },
+          "grossWeight": {
+            "measureValue": 2.16,
+            "measureUOM": "KG"
+          },
+          "chargeWeight": {
+            "measureValue": 6.7,
+            "measureUOM": "KG"
+          },
+          "grossVolume": {
+            "measureValue": 0.013,
+            "measureUOM": "M3"
+          },
+          "chargeVolume": {
+            "measureValue": 0.04,
+            "measureUOM": "M3"
+          }
+        },
+        "deliveryReferenceAttributes": [
+          {
+            "referenceTypeCode": "PURCHASEORDER_NUMBER",
+            "referenceText": "6201848974"
+          },
+          {
+            "referenceTypeCode": "PURCHASEORDER_ITEM_NUMBER",
+            "referenceText": "01300"
+          },
+          {
+            "referenceTypeCode": "INVOICE_NUMBER",
+            "referenceText": "3601271065"
+          },
+          {
+            "referenceTypeCode": "INVOICE_DATE",
+            "referenceText": "2025-07-23"
+          },
+          {
+            "referenceTypeCode": "MATERIAL_GROUP_CODE",
+            "referenceText": "N1112822"
+          }
+        ],
+        "deliveryTexts": [
+          {
+            "textTypeCode": "GENERAL_TEXT",
+            "textLine": "6.7 KG"
+          },
+          {
+            "textTypeCode": "GENERAL_TEXT",
+            "textLine": "0.04 M3"
+          }
+        ],
+        "deliveryItems": [
+          {
+            "deliveryNoteItemNumber": "000010",
+            "productCode": "IF1174-110",
+            "sizeCode": "2",
+            "systemItemCode": "IF1174-110-002",
+            "upc": "00198730590004",
+            "qualityCode": "SS",
+            "inventorySegmentationCode": "ABS",
+            "batchNumber": "0045450125",
+            "divisionCode": "10",
+            "baseUOM": "EA",
+            "deliveryQuantity": 18,
+            "uOM": "EA",
+            "originCountryCode": "VN",
+            "storageLocationCode": "1000",
+            "deliveryItemReferenceAttributes": [
+              {
+                "referenceTypeCode": "STYLE_DESCRIPTION",
+                "referenceText": "W J FLT CARGO WRAP SKIRT"
+              },
+              {
+                "referenceTypeCode": "PO_VARIANT_LINE_ITEM",
+                "referenceText": "001301"
+              }
+            ],
+            "deliveryItemMeasures": {
+              "netWeight": {
+                "measureValue": 2.16,
+                "measureUOM": "KG"
+              },
+              "grossWeight": {
+                "measureValue": 2.16,
+                "measureUOM": "KG"
+              },
+              "grossVolume": {
+                "measureValue": 0.013,
+                "measureUOM": "M3"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "deliveryNoteNumber": "2003341304",
+        "receiptId": "SIV0000000193755",
+        "assignedNodeCode": "1022",
+        "incoTermsCode": "FCA",
+        "incoTermsCommentsText": "DELIVERY POINT",
+        "goodsHolderTypeCode": "CARTON",
+        "goodsHolderCount": 1,
+        "plannedGoodsReceiptDate": "2025-08-04",
+        "deliveryCreateTimestamp": "2025-07-31T06:06:52Z",
+        "deliveryChangeTimestamp": "2025-07-31T05:00:00Z",
+        "createdByIdentifier": "CP_FTHMT_FHP",
+        "updatedByIdentifier": "CP_FTHMT_FHP",
+        "deliveryVendors": [
+          {
+            "vendorTypeCode": "FACTORY",
+            "vendorCode": "SIV",
+            "vendorName": "SOUTH ISLAND GARMENT SDN BHD",
+            "addressLine1Text": "2468, Solok Perusahaan Dua",
+            "cityName": "Perai, Penang",
+            "countryCode": "MY",
+            "postalCode": "13600",
+            "provinceStateRegionCode": "PIN",
+            "languageCode": "EN"
+          }
+        ],
+        "deliveryMeasures": {
+          "netWeight": {
+            "measureValue": 2.16,
+            "measureUOM": "KG"
+          },
+          "grossWeight": {
+            "measureValue": 2.16,
+            "measureUOM": "KG"
+          },
+          "grossVolume": {
+            "measureValue": 0.013,
+            "measureUOM": "M3"
+          }
+        },
+        "deliveryReferenceAttributes": [
+          {
+            "referenceTypeCode": "PURCHASEORDER_NUMBER",
+            "referenceText": "6201848974"
+          },
+          {
+            "referenceTypeCode": "PURCHASEORDER_ITEM_NUMBER",
+            "referenceText": "01400"
+          },
+          {
+            "referenceTypeCode": "INVOICE_NUMBER",
+            "referenceText": "3601271065"
+          },
+          {
+            "referenceTypeCode": "INVOICE_DATE",
+            "referenceText": "2025-07-23"
+          },
+          {
+            "referenceTypeCode": "MATERIAL_GROUP_CODE",
+            "referenceText": "N1112822"
+          }
+        ],
+        "deliveryTexts": [
+          {
+            "textTypeCode": "GENERAL_TEXT",
+            "textLine": "0.0 KG"
+          },
+          {
+            "textTypeCode": "GENERAL_TEXT",
+            "textLine": "0.0 M3"
+          }
+        ],
+        "deliveryItems": [
+          {
+            "deliveryNoteItemNumber": "000010",
+            "productCode": "IF1174-371",
+            "sizeCode": "2",
+            "systemItemCode": "IF1174-371-005",
+            "upc": "00198730633916",
+            "qualityCode": "SS",
+            "inventorySegmentationCode": "ABS",
+            "batchNumber": "0045450133",
+            "divisionCode": "10",
+            "baseUOM": "EA",
+            "deliveryQuantity": 18,
+            "uOM": "EA",
+            "originCountryCode": "VN",
+            "storageLocationCode": "1000",
+            "deliveryItemReferenceAttributes": [
+              {
+                "referenceTypeCode": "STYLE_DESCRIPTION",
+                "referenceText": "W J FLT CARGO WRAP SKIRT"
+              },
+              {
+                "referenceTypeCode": "PO_VARIANT_LINE_ITEM",
+                "referenceText": "001401"
+              }
+            ],
+            "deliveryItemMeasures": {
+              "netWeight": {
+                "measureValue": 2.16,
+                "measureUOM": "KG"
+              },
+              "grossWeight": {
+                "measureValue": 2.16,
+                "measureUOM": "KG"
+              },
+              "grossVolume": {
+                "measureValue": 0.013,
+                "measureUOM": "M3"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "goodsHolders": [
+      {
+        "id": "3f439db4-f8c6-4e5f-8b2a-bc6e998e0c90",
+        "idReferenceNumber": "3f439db4-f8c6-4e5f-8b2a-bc6e998e0c90",
+        "goodsHolderTypeCode": "CARTON",
+        "goodsHolderTypeSizeCode": "Z6",
+        "goodsHolderNumber": "00095577970058275688",
+        "alternateGoodsHolderNumber": "00000000001124080665",
+        "goodsHolderStatusCode": "SHIPPED",
+        "goodsHolderMeasures": {
+          "netWeight": {
+            "measureValue": 2.16,
+            "measureUOM": "KG"
+          },
+          "grossWeight": {
+            "measureValue": 3.349,
+            "measureUOM": "KG"
+          },
+          "grossVolume": {
+            "measureValue": 0.08507392,
+            "measureUOM": "M3"
+          },
+          "length": {
+            "measureValue": 59.7,
+            "measureUOM": "CM"
+          },
+          "width": {
+            "measureValue": 38.1,
+            "measureUOM": "CM"
+          },
+          "height": {
+            "measureValue": 31.75,
+            "measureUOM": "CM"
+          }
+        },
+        "goodsHolderItems": [
+          {
+            "upc": "00198730590004",
+            "productCode": "IF1174-110",
+            "packedQuantity": 18,
+            "sizeCode": "2",
+            "deliveryNoteNumber": "2003222659",
+            "deliveryNoteItemNumber": "000010",
+            "batchNumber": "0045450125",
+            "systemItemCode": "IF1174-110-002",
+            "uOM": "EA"
+          }
+        ]
+      },
+      {
+        "id": "534d76e5-0238-45e6-926a-487d432a5ecd",
+        "idReferenceNumber": "534d76e5-0238-45e6-926a-487d432a5ecd",
+        "goodsHolderTypeCode": "CARTON",
+        "goodsHolderTypeSizeCode": "Z3",
+        "goodsHolderNumber": "00095577970058275657",
+        "alternateGoodsHolderNumber": "00000000001124078380",
+        "goodsHolderStatusCode": "SHIPPED",
+        "goodsHolderMeasures": {
+          "netWeight": {
+            "measureValue": 1.84,
+            "measureUOM": "KG"
+          },
+          "grossWeight": {
+            "measureValue": 2.58,
+            "measureUOM": "KG"
+          },
+          "grossVolume": {
+            "measureValue": 0.053787038,
+            "measureUOM": "M3"
+          },
+          "length": {
+            "measureValue": 59.7,
+            "measureUOM": "CM"
+          },
+          "width": {
+            "measureValue": 38.1,
+            "measureUOM": "CM"
+          },
+          "height": {
+            "measureValue": 12.7,
+            "measureUOM": "CM"
+          }
+        },
+        "goodsHolderItems": [
+          {
+            "upc": "00198731038680",
+            "productCode": "IF8302-416",
+            "packedQuantity": 4,
+            "sizeCode": "M",
+            "deliveryNoteNumber": "2003107037",
+            "deliveryNoteItemNumber": "000010",
+            "batchNumber": "0045454867",
+            "systemItemCode": "IF8302-416-004",
+            "uOM": "EA"
+          }
+        ]
+      },
+      {
+        "id": "c3807288-113e-4de9-aba6-b4e4c9831a87",
+        "idReferenceNumber": "c3807288-113e-4de9-aba6-b4e4c9831a87",
+        "goodsHolderTypeCode": "CARTON",
+        "goodsHolderTypeSizeCode": "Z3",
+        "goodsHolderNumber": "00095577970058275657",
+        "alternateGoodsHolderNumber": "00000000001124076687",
+        "goodsHolderStatusCode": "SHIPPED",
+        "goodsHolderMeasures": {
+          "netWeight": {
+            "measureValue": 1.84,
+            "measureUOM": "KG"
+          },
+          "grossWeight": {
+            "measureValue": 2.58,
+            "measureUOM": "KG"
+          },
+          "grossVolume": {
+            "measureValue": 0.053787038,
+            "measureUOM": "M3"
+          },
+          "length": {
+            "measureValue": 59.7,
+            "measureUOM": "CM"
+          },
+          "width": {
+            "measureValue": 38.1,
+            "measureUOM": "CM"
+          },
+          "height": {
+            "measureValue": 12.7,
+            "measureUOM": "CM"
+          }
+        },
+        "goodsHolderItems": [
+          {
+            "upc": "00198731021071",
+            "productCode": "IF8302-382",
+            "packedQuantity": 4,
+            "sizeCode": "M",
+            "deliveryNoteNumber": "2003030196",
+            "deliveryNoteItemNumber": "000010",
+            "batchNumber": "0045454864",
+            "systemItemCode": "IF8302-382-004",
+            "uOM": "EA"
+          }
+        ]
+      },
+      {
+        "id": "8cbbbfb7-c8a2-4160-9994-692ceda72349",
+        "idReferenceNumber": "8cbbbfb7-c8a2-4160-9994-692ceda72349",
+        "goodsHolderTypeCode": "CARTON",
+        "goodsHolderTypeSizeCode": "Z3",
+        "goodsHolderNumber": "00095577970058275848",
+        "alternateGoodsHolderNumber": "00000000001124080874",
+        "goodsHolderStatusCode": "SHIPPED",
+        "goodsHolderMeasures": {
+          "netWeight": {
+            "measureValue": 8.58,
+            "measureUOM": "KG"
+          },
+          "grossWeight": {
+            "measureValue": 9.32,
+            "measureUOM": "KG"
+          },
+          "grossVolume": {
+            "measureValue": 0.059,
+            "measureUOM": "M3"
+          },
+          "length": {
+            "measureValue": 59.7,
+            "measureUOM": "CM"
+          },
+          "width": {
+            "measureValue": 38.1,
+            "measureUOM": "CM"
+          },
+          "height": {
+            "measureValue": 12.7,
+            "measureUOM": "CM"
+          }
+        },
+        "goodsHolderItems": [
+          {
+            "upc": "00198731560235",
+            "productCode": "FN3303-407",
+            "packedQuantity": 22,
+            "sizeCode": "L",
+            "deliveryNoteNumber": "2002705798",
+            "deliveryNoteItemNumber": "000010",
+            "batchNumber": "0046520039",
+            "systemItemCode": "FN3303-407-006",
+            "uOM": "EA"
+          }
+        ]
+      },
+      {
+        "id": "49c8728e-8bab-4a34-a51c-b07057360d10",
+        "idReferenceNumber": "49c8728e-8bab-4a34-a51c-b07057360d10",
+        "goodsHolderTypeCode": "CARTON",
+        "goodsHolderTypeSizeCode": "Z3",
+        "goodsHolderNumber": "00095577970058275657",
+        "alternateGoodsHolderNumber": "00000000001124077118",
+        "goodsHolderStatusCode": "SHIPPED",
+        "goodsHolderMeasures": {
+          "netWeight": {
+            "measureValue": 1.436,
+            "measureUOM": "KG"
+          },
+          "grossWeight": {
+            "measureValue": 2.176,
+            "measureUOM": "KG"
+          },
+          "grossVolume": {
+            "measureValue": 0.028887039,
+            "measureUOM": "M3"
+          },
+          "length": {
+            "measureValue": 59.7,
+            "measureUOM": "CM"
+          },
+          "width": {
+            "measureValue": 38.1,
+            "measureUOM": "CM"
+          },
+          "height": {
+            "measureValue": 12.7,
+            "measureUOM": "CM"
+          }
+        },
+        "goodsHolderItems": [
+          {
+            "upc": "00198731034057",
+            "productCode": "IF8299-833",
+            "packedQuantity": 4,
+            "sizeCode": "M",
+            "deliveryNoteNumber": "2002909425",
+            "deliveryNoteItemNumber": "000010",
+            "batchNumber": "0045454848",
+            "systemItemCode": "IF8299-833-005",
+            "uOM": "EA"
+          }
+        ]
+      },
+      {
+        "id": "10a39707-0470-462c-99d6-5bf83458be3d",
+        "idReferenceNumber": "10a39707-0470-462c-99d6-5bf83458be3d",
+        "goodsHolderTypeCode": "CARTON",
+        "goodsHolderTypeSizeCode": "Z3",
+        "goodsHolderNumber": "00095577970058275657",
+        "alternateGoodsHolderNumber": "00000000001124075944",
+        "goodsHolderStatusCode": "SHIPPED",
+        "goodsHolderMeasures": {
+          "netWeight": {
+            "measureValue": 1.436,
+            "measureUOM": "KG"
+          },
+          "grossWeight": {
+            "measureValue": 2.176,
+            "measureUOM": "KG"
+          },
+          "grossVolume": {
+            "measureValue": 0.028887039,
+            "measureUOM": "M3"
+          },
+          "length": {
+            "measureValue": 59.7,
+            "measureUOM": "CM"
+          },
+          "width": {
+            "measureValue": 38.1,
+            "measureUOM": "CM"
+          },
+          "height": {
+            "measureValue": 12.7,
+            "measureUOM": "CM"
+          }
+        },
+        "goodsHolderItems": [
+          {
+            "upc": "00198730857510",
+            "productCode": "IF8299-382",
+            "packedQuantity": 4,
+            "sizeCode": "M",
+            "deliveryNoteNumber": "2002590856",
+            "deliveryNoteItemNumber": "000010",
+            "batchNumber": "0045454844",
+            "systemItemCode": "IF8299-382-001",
+            "uOM": "EA"
+          }
+        ]
+      },
+      {
+        "id": "81999492-2209-4bc3-b766-d39be2266120",
+        "idReferenceNumber": "81999492-2209-4bc3-b766-d39be2266120",
+        "goodsHolderTypeCode": "CARTON",
+        "goodsHolderTypeSizeCode": "Z6",
+        "goodsHolderNumber": "00095577970058275688",
+        "alternateGoodsHolderNumber": "00000000001124075636",
+        "goodsHolderStatusCode": "SHIPPED",
+        "goodsHolderMeasures": {
+          "netWeight": {
+            "measureValue": 2.16,
+            "measureUOM": "KG"
+          },
+          "grossWeight": {
+            "measureValue": 3.349,
+            "measureUOM": "KG"
+          },
+          "grossVolume": {
+            "measureValue": 0.08507392,
+            "measureUOM": "M3"
+          },
+          "length": {
+            "measureValue": 59.7,
+            "measureUOM": "CM"
+          },
+          "width": {
+            "measureValue": 38.1,
+            "measureUOM": "CM"
+          },
+          "height": {
+            "measureValue": 31.75,
+            "measureUOM": "CM"
+          }
+        },
+        "goodsHolderItems": [
+          {
+            "upc": "00198730633916",
+            "productCode": "IF1174-371",
+            "packedQuantity": 18,
+            "sizeCode": "2",
+            "deliveryNoteNumber": "2003341304",
+            "deliveryNoteItemNumber": "000010",
+            "batchNumber": "0045450133",
+            "systemItemCode": "IF1174-371-005",
+            "uOM": "EA"
+          }
+        ]
+      }
+    ],
+    "transportHolders": [
+      {
+        "transportHolderNumber": "43Z1216185",
+        "transportHolderTypeCode": "CONTAINER",
+        "transportHolderTypeSizeCode": "9000",
+        "transportHolderSequenceNumber": "1",
+        "goodsHolderCount": 3,
+        "transportHolderMeasures": {
+          "netWeight": {
+            "measureValue": 25.0,
+            "measureUOM": "KG"
+          },
+          "grossWeight": {
+            "measureValue": 25.0,
+            "measureUOM": "KG"
+          },
+          "grossVolume": {
+            "measureValue": 0.14,
+            "measureUOM": "M3"
+          }
+        }
+      }
+    ],
+    "freightOrderNumber": "6301642787"
+  }
+}
+ 
