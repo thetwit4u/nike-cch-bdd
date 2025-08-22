@@ -6,6 +6,7 @@ Feature: Controller ASN start → Orchestrator HITL flow v2.2.0 (mocked)
     When I start the controller scenario via "sqs"
 
     Then I wait for a System Event matching jsonpath "$.transition.currentStep.name == 'Enrich_Consignment'" within 60 seconds
+    And I sync correlation and instance from last System Event
     # Optional: correlation contains the injected UUID captured at controller start
     # Then I wait for a System Event matching jsonpath "$.correlationId contains ${ctx:captures.controllerStartUuid}" within 60 seconds
 

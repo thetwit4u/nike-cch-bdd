@@ -94,6 +94,14 @@ Then('I wait for a System Event matching jsonpath {string} within {int} seconds'
   (this.ctx as any).lastEvent = evt;
 });
 
+Given('I sync correlation and instance from last System Event', function(this: CchWorld) {
+  const evt = (this.ctx as any).lastEvent as SystemEvent;
+  if (!evt) throw new Error('No last System Event available');
+  if (evt.correlationId) this.ctx.correlationId = evt.correlationId;
+  if ((evt as any).workflowInstanceId) this.ctx.workflowInstanceId = (evt as any).workflowInstanceId as string;
+  this.attach(`Synced correlationId=${this.ctx.correlationId}, workflowInstanceId=${this.ctx.workflowInstanceId}`);
+});
+
 Then('I fetch JSON from s3 URI in businessContext at path {string} and compare with fixture {string}', async function(this: CchWorld, jsonPath: string, fixtureRel: string) {
   const evt = (this.ctx as any).lastEvent as SystemEvent;
   if (!evt) throw new Error('No last System Event available');
