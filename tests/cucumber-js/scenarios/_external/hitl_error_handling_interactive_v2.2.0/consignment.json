@@ -1,0 +1,127 @@
+{
+    "consignment": {
+        "consignmentId": "${uuid}",
+        "correlationId": "${correlationId}-${uuid}",
+        "billOfLadingNbr": "20584015094",
+        "totalShipmentCount": 1,
+        "totalGoodsHolderCount": 3,
+        "originAddress": {
+            "code": "SGN",
+            "name": "Ho Chi Minh City - VN",
+            "cityName": "Ho Chi Minh City",
+            "provinceStateRegionCode": "65",
+            "countryCode": "VN"
+        },
+        "dischargeAddress": {
+            "code": "ORD",
+            "name": "Chicago - US",
+            "postalCode": "60601",
+            "cityName": "Chicago",
+            "provinceStateRegionCode": "IL",
+            "countryCode": "US"
+        },
+        "originReceiptAddress": {
+            "code": "SGN",
+            "cityName": "TAN SON NHAT INTL",
+            "provinceStateRegionCode": "HC",
+            "countryCode": "VN"
+        },
+        "plannedDischargeDate": "2025-08-02",
+        "actualShippedTimestamp": "2025-07-31T12:00:00.000Z",
+        "transportVehicle": {
+            "modeOfTransportation": "AIR",
+            "voyageNumber": "NH834"
+        },
+        "transportHolders": [
+            {
+                "transportHolderNbr": "43Z1216185",
+                "typeCode": "CONTAINER",
+                "typeSizeCode": "9000"
+            }
+        ],
+        "carrier": {
+            "code": "EXDO",
+            "name": "Expeditors International of Washington,",
+            "addressLine1": "1015 Third Avenue",
+            "cityName": "Seattle",
+            "postalCode": "98104",
+            "provinceStateRegionCode": "WA",
+            "emailAddressText": "kristi.colleran@expeditors.com",
+            "telephoneNumber": "2066743400"
+        },
+        "forwarder": {
+            "code": "EXDO",
+            "name": "Expeditors International of Washington,",
+            "addressLine1": "1015 Third Avenue",
+            "cityName": "Seattle",
+            "postalCode": "98104",
+            "provinceStateRegionCode": "WA",
+            "emailAddressText": "kristi.colleran@expeditors.com",
+            "telephoneNumber": "2066743400"
+        },
+        "shipments": [
+            {
+                "shipmentNbr": "6301642787",
+                "isSamplesShipment": true,
+                "goodsHolderCount": 3,
+                "goodsHolderTypeCode": "CARTON",
+                "companyCode": "1220",
+                "shipmentChangeTimestamp": "2025-07-31T01:14:33.000Z",
+                "ultimateDestinationAddress": {
+                    "code": "1022",
+                    "name": "NRS - Samples",
+                    "addressLine1": "127 E Elk Trail",
+                    "postalCode": "60188-9300",
+                    "cityName": "Carol Stream",
+                    "provinceStateRegionCode": "IL",
+                    "countryCode": "US"
+                },
+                "goodsHolders": [
+                    {
+                        "goodsHolderNbr": "00095577970058275688",
+                        "weightInGrams": 3349.0,
+                        "volumeInCcm": 85073.92,
+                        "transportHolderNbr": "43Z1216185"
+                    },
+                    {
+                        "goodsHolderNbr": "00095577970058275657",
+                        "weightInGrams": 2580.0,
+                        "volumeInCcm": 53787.038,
+                        "transportHolderNbr": "43Z1216185"
+                    },
+                    {
+                        "goodsHolderNbr": "00095577970058275657",
+                        "weightInGrams": 2580.0,
+                        "volumeInCcm": 53787.038,
+                        "transportHolderNbr": "43Z1216185"
+                    },
+                    {
+                        "goodsHolderNbr": "00095577970058275848",
+                        "weightInGrams": 9320.0,
+                        "volumeInCcm": 59000.0,
+                        "transportHolderNbr": "43Z1216185"
+                    },
+                    {
+                        "goodsHolderNbr": "00095577970058275657",
+                        "weightInGrams": 2176.0,
+                        "volumeInCcm": 28887.039,
+                        "transportHolderNbr": "43Z1216185"
+                    },
+                    {
+                        "goodsHolderNbr": "00095577970058275657",
+                        "weightInGrams": 2176.0,
+                        "volumeInCcm": 28887.039,
+                        "transportHolderNbr": "43Z1216185"
+                    },
+                    {
+                        "goodsHolderNbr": "00095577970058275688",
+                        "weightInGrams": 3349.0,
+                        "volumeInCcm": 85073.92,
+                        "transportHolderNbr": "43Z1216185"
+                    }
+                ],
+                "deliveries": []
+            }
+        ]
+    }
+}
