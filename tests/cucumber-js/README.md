@@ -27,6 +27,23 @@ npm run cucumber -- --tags @hitl
 npm run cucumber -- --scenario tests/cucumber-js/scenarios/_starter --user $USER
 ```
 
+#### Select environment file
+- Default env file: `tests/cucumber-js/.local.env`
+- By environment name (loads `tests/cucumber-js/.env.<name>`):
+```
+npm run cucumber -- --tags @hitl --env dev
+```
+- By explicit env file path:
+```
+npm run cucumber -- --tags @hitl --env-file ./tests/cucumber-js/.env.sit
+```
+- Or via environment variables:
+```
+ENV=dev npm run cucumber -- --tags @hitl
+BDD_ENV=dev npm run cucumber -- --tags @hitl
+ENV_FILE=/abs/path/.env.other npm run cucumber -- --tags @hitl
+```
+
 ### Core steps
 - Start orchestrator (SQS only): `When I start the orchestrator scenario via "sqs"`
 - Upload workflow definition: `And I set workflow definition from local file "...yaml" with s3 dest "workflows/...yaml"`
