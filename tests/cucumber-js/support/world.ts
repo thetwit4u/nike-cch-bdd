@@ -10,8 +10,11 @@ function getCliArg(name: string): string | undefined {
 }
 const cliEnv = getCliArg('env');
 const cliEnvFile = getCliArg('env-file');
-const selectedEnv = cliEnv || process.env.ENV || process.env.BDD_ENV;
-const selectedEnvFile = cliEnvFile || process.env.ENV_FILE || (selectedEnv ? `tests/cucumber-js/.env.${selectedEnv}` : 'tests/cucumber-js/.local.env');
+// Support npm config flags passed before "--": npm run ... --env=dev -- --tags ...
+const npmEnv = (process.env.npm_config_env as string | undefined);
+const npmEnvFile = (process.env.npm_config_env_file as string | undefined);
+const selectedEnv = cliEnv || npmEnv || process.env.ENV || process.env.BDD_ENV;
+const selectedEnvFile = cliEnvFile || npmEnvFile || process.env.ENV_FILE || (selectedEnv ? `tests/cucumber-js/.env.${selectedEnv}` : 'tests/cucumber-js/.local.env');
 dotenv.config({ path: selectedEnvFile });
 
 import { setWorldConstructor, IWorldOptions, World, setDefaultTimeout } from '@cucumber/cucumber';
