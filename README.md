@@ -157,6 +157,12 @@ npm run cucumber:ui -- --tags @hitl
 npm run cucumber -- --format @cucumber/pretty-formatter --tags @hitl
 ```
 
+A custom theme is configured in `cucumber.js`. Force colors if needed:
+
+```bash
+FORCE_COLOR=1 npm run cucumber:ui -- --tags @hitl
+```
+
 Tip: for best rendering, run in a real terminal (Terminal/iTerm) rather than an IDE panel.
 
 ### Authoring scenarios
