@@ -34,7 +34,6 @@ Feature: Controller ASN start → Orchestrator HITL flow v2.2.0 (mocked)
 
     Then I wait for a System Event matching jsonpath "$.transition.currentStep.name == 'End_Workflow'" within 90 seconds
 
-    Then I fetch JSON from s3 URI in businessContext at path "$.businessContext.consignmentURI" \
-      and compare JSON at path "$.consignment.shipments[0].deliveries" with fixture "../../samples/20584015094_consignment.json" at path "$.consignment.shipments[0].deliveries"
+    Then I fetch JSON from s3 URI in businessContext at path "$.businessContext.consignmentURI" and compare JSON at path "$.consignment.shipments[0].deliveries" with fixture "../../samples/20584015094_consignment.json" at path "$.consignment.shipments[0].deliveries"
 
 
