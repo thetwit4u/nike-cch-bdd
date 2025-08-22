@@ -31,11 +31,11 @@ npm run cucumber -- --scenario tests/cucumber-js/scenarios/_starter --user $USER
 - Default env file: `tests/cucumber-js/.local.env`
 - By environment name (loads `tests/cucumber-js/.env.<name>`):
 ```
-npm run cucumber -- --tags @hitl --env dev
+npm run cucumber --env=dev -- --tags @hitl
 ```
 - By explicit env file path:
 ```
-npm run cucumber -- --tags @hitl --env-file ./tests/cucumber-js/.env.sit
+npm run cucumber --env-file=./tests/cucumber-js/.env.sit -- --tags @hitl
 ```
 - Or via environment variables:
 ```
