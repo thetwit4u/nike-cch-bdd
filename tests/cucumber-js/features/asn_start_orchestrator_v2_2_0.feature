@@ -3,7 +3,7 @@ Feature: Controller ASN start → Orchestrator HITL flow v2.2.0 (mocked)
   @orchestrator @controller @asn @hitl @flow_full @v2_2_0 @mocked @regression
   Scenario: Flow Controller starts orchestrator from ASN; validate deliveries only
     Given I load scenario "_external/controller_asn_start_v2.2.0"
-    When I start the controller scenario via "sqs"
+    When I start the controller scenario via "s3"
 
     Then I wait for a System Event matching jsonpath "$.transition.currentStep.name == 'Enrich_Consignment'" within 60 seconds
     And I sync correlation and instance from last System Event

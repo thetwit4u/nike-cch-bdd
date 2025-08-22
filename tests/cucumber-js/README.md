@@ -8,8 +8,8 @@ This harness starts a flow (orchestrator via SQS; controller via S3/SQS), subscr
 - `COMMAND_QUEUE_URL` (URL or ARN) [required]
 - `CONTROLLER_QUEUE_URL` (URL or ARN) [required for controller flows]
 - `SYSTEM_EVENTS_TOPIC_ARN` [required]
-- `START_S3_BUCKET` (optional; temp bucket created if missing)
-- `START_S3_KEY_PREFIX` (default: `workflows/`)
+- `START_S3_BUCKET` (optional; temp bucket created if missing; for controller S3 start, set to the controller ingest bucket)
+- `START_S3_KEY_PREFIX` (default: `workflows/`; can be empty or a controller-specific prefix like `asn/`)
 - `TEST_USER`
 - `SYSTEM_EVENT_SCHEMA_MODE` (`warn` or `strict`)
 
